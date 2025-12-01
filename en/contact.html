@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Hypertieto. Book a 20 min call or request a quote for a project.">
+    <link rel="icon" href="../img/favicon.ico">
+    <title>Hypertieto – Contact</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="alternate" href="../fi/yhteys.html" hreflang="fi">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo"><img src="../img/logo.png" alt="Hypertieto logo" width="160"
+                    height="40"></a>
+            <nav class="main-nav" role="navigation" aria-label="Main menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container contact-page">
+        <h1>Contact</h1>
+        <p class="lead">Contact by email or phone, or send a short project brief using the form below.</p>
+
+        <section class="contact-info">
+            <p><strong>Email</strong>: <a
+                    href="mailto:tuija.christiansen@hypertieto.fi">tuija.christiansen@hypertieto.fi</a></p>
+            <p><strong>Phone</strong>: <a href="tel:+358505681187">+358 50 5681187</a></p>
+            <p><a class="btn btn-primary" href="#contact-form">Book a 20 min call</a></p>
+        </section>
+
+        <section id="contact-form" class="contact-form">
+            <h2>Send a message</h2>
+            <form action="#" method="post" novalidate>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required minlength="2">
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required>
+
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="+358 50 5681187">
+
+                <label for="budget">Estimated budget or team size</label>
+                <input id="budget" name="budget" type="number" min="0" max="1000000">
+
+                <label for="service">Service</label>
+                <select id="service" name="service" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="project">Project Coordination</option>
+                    <option value="sales">Sales Support</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="events">Events & Meetings</option>
+                    <option value="travel">Calendar & Travel</option>
+                </select>
+
+                <fieldset>
+                    <legend>Preferred language</legend>
+                    <label><input type="checkbox" name="lang" value="fi"> Finnish</label>
+                    <label><input type="checkbox" name="lang" value="sv"> Swedish</label>
+                    <label><input type="checkbox" name="lang" value="no"> Norwegian</label>
+                    <label><input type="checkbox" name="lang" value="de"> German</label>
+                    <label><input type="checkbox" name="lang" value="en"> English</label>
+                </fieldset>
+
+                <label for="start">Desired start date</label>
+                <input id="start" name="start" type="date">
+
+                <label for="message">Short project description</label>
+                <textarea id="message" name="message" rows="6" required minlength="10"></textarea>
+
+                <label class="consent">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    I consent to my data being used for contact purposes.
+                </label>
+
+                <button class="btn btn-primary" type="submit">Send message</button>
+            </form>
+        </section>
+
+        <section class="contact-gallery">
+            <h2>Event highlights</h2>
+            <div class="gallery-grid">
+                <figure>
+                    <img src="../img/food.jpg" alt="Catering at an event" width="360" height="240">
+                    <figcaption>Catering</figcaption>
+                </figure>
+                <figure>
+                    <img src="../img/finland.jpg" alt="Leadership team snowmobile outing in Finland" width="360"
+                        height="240">
+                    <figcaption>Team day</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Last updated: <time datetime="2025-12-01">1 Dec 2025</time></p>
+        </div>
+    </footer>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

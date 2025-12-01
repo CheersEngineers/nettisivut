@@ -1,11 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Hypertieto – Virtuaaliset Johdon Assistenttipalvelut.">
+    <link rel="icon" href="img/favicon.ico">
+    <title>Hypertieto – Virtuaaliset Johdon Assistenttipalvelut</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a href="index.html" class="logo" aria-label="Hypertieto">
+                <img src="img/logo.png" alt="Hypertieto logo" width="160" height="40">
+            </a>
+            <button id="lang-toggle" class="lang-toggle" aria-label="Switch to English">EN</button>
+            <nav class="main-nav" role="navigation" aria-label="Päävalikko">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Etusivu</a></li>
+                    <li><a href="fi/palvelut.html">Palvelut</a></li>
+                    <li><a href="fi/minusta.html">Minusta</a></li>
+                    <li><a href="fi/referenssit.html">Referenssit</a></li>
+                    <li><a href="fi/yhteys.html">Yhteys</a></li>
+                </ul>
+            </nav>
+            <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
+                aria-label="Avaa valikko">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu" hidden>
+            <ul>
+                <li><a href="index.html">Etusivu</a></li>
+                <li><a href="fi/palvelut.html">Palvelut</a></li>
+                <li><a href="fi/minusta.html">Minusta</a></li>
+                <li><a href="fi/referenssit.html">Referenssit</a></li>
+                <li><a href="fi/yhteys.html">Yhteys</a></li>
+                <li><a href="en/index.html">English</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main id="main" class="site-main" role="main">
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1>Johdon assistenttipalvelut projektina – tuloksia nopeasti.</h1>
+                    <p class="lead">Kokemus ylimmän johdon tukena 40+ vuotta. Organisointi, myynti & markkinointi,
+                        tapahtumat ja kokoukset. Työskentelen suomeksi, ruotsiksi, norjaksi, saksaksi ja englanniksi.
+                    </p>
+                    <div class="hero-ctas">
+                        <a class="btn btn-primary" href="fi/yhteys.html#book">Varaa 20 min keskustelu</a>
+                        <a class="btn btn-outline" href="fi/yhteys.html#quote">Pyydä tarjous</a>
+                    </div>
+                    <ul class="highlights">
+                        <li><strong>Erinomainen organisointikyky</strong></li>
+                        <li><strong>Laaja globaali verkosto</strong></li>
+                        <li><strong>Myynnin & markkinoinnin toteutus</strong></li>
+                        <li><strong>Tapahtumat & kokoukset end-to-end</strong></li>
+                    </ul>
+                </div>
+
+                <figure class="hero-figure">
+                    <img src="img/tuija_background.jpg" alt="Tuija Christiansen profiilikuva" width="420" height="560">
+                    <figcaption>Tuija Christiansen – Virtuaali Johdon Assistentti</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="gallery-teaser">
+            <div class="container">
+                <h2>Hetkiä työstä</h2>
+                <div class="gallery-grid">
+                    <figure>
+                        <img src="img/meeting_germany.jpg" alt="Kokoustila järjestetty Tuijan toimesta" width="360"
+                            height="240">
+                        <figcaption>Kokoustila Saksassa</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/finland.jpg" alt="Johtoryhmän lumikelkka ajelu Suomessa" width="360" height="240">
+                        <figcaption>Tiimipäivä Suomessa</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/food.jpg" alt="Ruokatarjoilu tapahtumassa" width="360" height="240">
+                        <figcaption>Tapahtumatarjoilu</figcaption>
+                    </figure>
+                </div>
+                <p><a class="btn" href="fi/referenssit.html">Katso referenssit ja keissit</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-grid">
+            <div>
+                <h3>Hypertieto</h3>
+                <p>Tuija Christiansen · Virtuaali Johdon Assistentti</p>
+                <p><a href="mailto:tuija.christiansen@hypertieto.fi">tuija.christiansen@hypertieto.fi</a> · 050 5681187
+                </p>
+            </div>
+            <nav aria-label="Footer navigation">
+                <ul>
+                    <li><a href="fi/palvelut.html">Palvelut</a></li>
+                    <li><a href="fi/minusta.html">Minusta</a></li>
+                    <li><a href="fi/referenssit.html">Referenssit</a></li>
+                    <li><a href="fi/yhteys.html">Yhteys</a></li>
+                </ul>
+            </nav>
+            <div class="footer-meta">
+                <p>Viimeksi päivitetty: <time datetime="2025-12-01">1.12.2025</time></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
 </body>
+
 </html>
