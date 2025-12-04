@@ -15,46 +15,50 @@
 <body>
     <header class="site-header" role="banner">
         <div class="container header-inner">
-            <a href="index.html" class="logo" aria-label="Hypertieto">
+            <a href="/en/index.html" class="logo" aria-label="Hypertieto">
                 <img src="/img/logo.png" alt="Hypertieto logo" width="160" height="40">
             </a>
     
-            <nav class="main-nav" role="navigation" aria-label="Päävalikko">
+            <nav class="main-nav" role="navigation" aria-label="Main menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="case-studies.html">Case Studies</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="/en/index.html">Home</a></li>
+                    <li><a href="/en/services.html">Services</a></li>
+                    <li><a href="/en/about.html">About</a></li>
+                    <li><a href="/en/case-studies.html">Case Studies</a></li>
+                    <li><a href="/en/contact.html">Contact</a></li>
                 </ul>
             </nav>
     
-            <!-- Language flags: place these side-by-side in top-right -->
-            <div class="lang-switch" aria-hidden="false">
-                <button class="lang-btn" id="lang-fi" aria-label="Suomi" title="Suomi">
-                    <img src="/img/fin_flag.png" alt="Suomen lippu" width="28" height="20">
-                </button>
-                <button class="lang-btn" id="lang-en" aria-label="English" title="English">
-                    <img src="/img/eng_flag.png" alt="UK/US flag" width="28" height="20">
+            <div class="header-right">
+                <div class="lang-switch" aria-hidden="false">
+                    <button class="lang-btn" id="lang-fi" aria-label="Suomi" title="Suomi">
+                        <img src="/img/flag-fi.png" alt="Suomen lippu" width="28" height="20">
+                    </button>
+                    <button class="lang-btn" id="lang-en" aria-label="English" title="English">
+                        <img src="/img/flag-en.png" alt="UK/US flag" width="28" height="20">
+                    </button>
+                </div>
+    
+                <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
+                    aria-label="Open menu">
+                    <span class="hamburger" aria-hidden="true"></span>
                 </button>
             </div>
-    
-            <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
-                aria-label="Avaa valikko">
-                <span class="hamburger"></span>
-            </button>
         </div>
     
-        <div id="mobile-menu" class="mobile-menu" hidden>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="case-studies.html">Case Studies</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+        <div id="mobile-menu" class="mobile-menu" hidden aria-hidden="true">
+            <nav role="navigation" aria-label="Mobile main menu">
+                <ul>
+                    <li><a href="/en/index.html">Home</a></li>
+                    <li><a href="/en/services.html">Services</a></li>
+                    <li><a href="/en/about.html">About</a></li>
+                    <li><a href="/en/case-studies.html">Case Studies</a></li>
+                    <li><a href="/en/contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
+
 
     <main class="container">
         <article class="services">
