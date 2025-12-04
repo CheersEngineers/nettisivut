@@ -3,12 +3,57 @@
    Kommentit selittävät päälohkoja ja luokkien tarkoitusta.
 */
 
+/* Language flag buttons (top-right) */
+.lang-switch{
+  display:flex;
+  gap:0.5rem;
+  align-items:center;
+  margin-left:auto; /* työntää navin vasemmalle */
+}
+.lang-btn{
+  background:transparent;
+  border:0;
+  padding:0.15rem;
+  border-radius:6px;
+  cursor:pointer;
+}
+.lang-btn img{
+  display:block;
+  width:28px;
+  height:20px;
+  object-fit:cover;
+  border-radius:3px;
+  box-shadow:0 0 0 1px rgba(0,0,0,0.04) inset;
+}
+.lang-btn:focus{
+  outline:none;
+  box-shadow: 0 0 0 3px rgba(10,102,194,0.18);
+  border-radius:6px;
+}
+.lang-btn.active-lang{
+  box-shadow:0 0 0 3px rgba(10,102,194,0.18)
+}
+
+
+/* Pieni säätö header-inner: varmista että sisältö asettuu riville */
+.header-inner{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+
+/* Mobile: liput näkyvät myös mobiilissa, mutta pienempinä */
+@media (max-width:700px){
+  .lang-btn img{width:24px;height:18px}
+  .main-nav{display:none} /* oletuksena piilotettu mobiilissa, kuten aiemmin */
+}
+
 /* Perusasetukset */
 :root{
   --bg:#ffffff;
   --text:#0b1a2b;
   --muted:#6b7a89;
-  --accent:#0a66c2; /* CTA color */
+  --accent:rgb(10, 102, 194); /* CTA color */
   --accent-2:#0b8f6b;
   --max-width:1200px;
   --container-padding:1rem;

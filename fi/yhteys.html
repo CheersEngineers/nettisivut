@@ -11,19 +11,46 @@
 </head>
 
 <body>
-    <header class="site-header">
+    <header class="site-header" role="banner">
         <div class="container header-inner">
-            <a href="../index.html" class="logo"><img src="../img/logo.png" alt="Hypertieto logo" width="160"
-                    height="40"></a>
-            <nav class="main-nav" aria-label="Päävalikko">
+            <a href="/index.html" class="logo" aria-label="Hypertieto">
+                <img src="/img/logo.png" alt="Hypertieto logo" width="160" height="40">
+            </a>
+    
+            <nav class="main-nav" role="navigation" aria-label="Päävalikko">
                 <ul>
-                    <li><a href="../index.html">Etusivu</a></li>
-                    <li><a href="palvelut.html">Palvelut</a></li>
-                    <li><a href="minusta.html">Minusta</a></li>
-                    <li><a href="referenssit.html">Referenssit</a></li>
-                    <li><a href="yhteys.html" aria-current="page">Yhteys</a></li>
+                    <li><a href="/index.html">Etusivu</a></li>
+                    <li><a href="/fi/palvelut.html">Palvelut</a></li>
+                    <li><a href="/fi/minusta.html">Minusta</a></li>
+                    <li><a href="/fi/referenssit.html">Referenssit</a></li>
+                    <li><a href="/fi/yhteys.html">Yhteys</a></li>
                 </ul>
             </nav>
+    
+            <!-- Language flags: place these side-by-side in top-right -->
+            <div class="lang-switch" aria-hidden="false">
+                <button class="lang-btn" id="lang-fi" aria-label="Suomi" title="Suomi">
+                    <img src="/img/fin_flag.png" alt="Suomen lippu" width="28" height="20">
+                </button>
+                <button class="lang-btn" id="lang-en" aria-label="English" title="English">
+                    <img src="/img/eng_flag.png" alt="UK/US flag" width="28" height="20">
+                </button>
+            </div>
+    
+            <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
+                aria-label="Avaa valikko">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    
+        <div id="mobile-menu" class="mobile-menu" hidden>
+            <ul>
+                <li><a href="/index.html">Etusivu</a></li>
+                <li><a href="/fi/palvelut.html">Palvelut</a></li>
+                <li><a href="/fi/minusta.html">Minusta</a></li>
+                <li><a href="/fi/referenssit.html">Referenssit</a></li>
+                <li><a href="/fi/yhteys.html">Yhteys</a></li>
+            </ul>
         </div>
     </header>
 
