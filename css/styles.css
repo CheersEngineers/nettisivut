@@ -378,14 +378,84 @@ body{
   border-top: 1px solid #e6eef6;
   padding: 1.25rem 0;
   margin-top: 2rem;
-  background: #F5C0C3;
+  /* Background image */
+  background: url("/img/background.jpeg") no-repeat center center;
+  background-size: cover;
+  color: #ffffff; /* ensure text is readable on dark/colored background */
+  position: relative;
 }
-.footer-grid{
+.site-footer::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.4); /* semi-transparent overlay */
+  z-index:0;
+}
+.site-footer .container,
+.site-footer .footer-grid,
+.site-footer .footer-social{
+  position:relative;
+  z-index:1; /* keep content above overlay */
+}
+
+/* Footer contact layout */
+.footer-contact{
   display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
+
+.contact-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff; /* adjust based on footer background */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-link:hover,
+.contact-link:focus{
+  color: #0a66c2; /* LinkedIn blue or accent color */
+}
+
+.contact-icon{
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* LinkedIn button in footer */
+.footer-social{
+  margin-top: 1rem;
+}
+
+.linkedin-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #0a66c2; /* LinkedIn blue */
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background .2s ease, color .2s ease;
+}
+
+.linkedin-btn:hover,
+.linkedin-btn:focus{
+  background: #000; /* black on hover */
+  color: #fff;
+}
+
+.linkedin-icon{
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
 
 /* =========================
    Accessibility focus visible
