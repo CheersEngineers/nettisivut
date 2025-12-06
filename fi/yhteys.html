@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="fi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +8,12 @@
     <title>Hypertieto – Ota yhteyttä</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-
 <body>
     <header class="site-header" role="banner">
         <div class="container header-inner">
             <a href="/index.html" class="logo" aria-label="Hypertieto">
                 <img src="/img/logo.png" alt="Hypertieto logo" width="160" height="40">
-            </a>
-    
+            </a> 
             <nav class="main-nav" role="navigation" aria-label="Päävalikko">
                 <ul>
                     <li><a href="/index.html">Etusivu</a></li>
@@ -25,8 +22,7 @@
                     <li><a href="/fi/referenssit.html">Referenssit</a></li>
                     <li><a href="/fi/yhteys.html">Yhteys</a></li>
                 </ul>
-            </nav>
-    
+            </nav> 
             <div class="header-right">
                 <div class="lang-switch" aria-hidden="false">
                     <button class="lang-btn" id="lang-fi" aria-label="Suomi" title="Suomi">
@@ -42,8 +38,7 @@
                     <span class="hamburger" aria-hidden="true"></span>
                 </button>
             </div>
-        </div>
-    
+        </div>   
         <div id="mobile-menu" class="mobile-menu" hidden aria-hidden="true">
             <nav role="navigation" aria-label="Päävalikko mobiili">
                 <ul>
@@ -56,35 +51,47 @@
             </nav>
         </div>
     </header>
-
-
     <main class="container contact-page">
         <h1>Yhteydenotto</h1>
         <p class="lead">Ota yhteyttä sähköpostilla tai puhelimitse, tai lähetä lyhyt projektikuvaus alla olevalla
             lomakkeella.</p>
-
         <section class="contact-info">
-            <p><strong>Sähköposti</strong>: <a
-                    href="mailto:tuija.christiansen@hypertieto.fi">tuija.christiansen@hypertieto.fi</a></p>
-            <p><strong>Puhelin</strong>: <a href="tel:+358505681187">050 5681187</a></p>
-            <p><a class="btn btn-primary" href="#contact-form">Varaa 20 min keskustelu</a></p>
+            <div class="footer-contact">
+                <a href="mailto:tuija.christiansen@hypertieto.fi" class="contact-link">
+                    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
+                        <path fill="currentColor"
+                            d="M502.3 190.8 327.4 338.2c-22.2 18.9-54.6 18.9-76.8 0L9.7 190.8C3.9 186.1 0 178.7 0 170.7V96c0-26.5 21.5-48 48-48h416c26.5 0 48 21.5 48 48v74.7c0 8-3.9 15.4-9.7 20.1zM0 224v192c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V224L327.4 371.4c-22.2 18.9-54.6 18.9-76.8 0L0 224z" />
+                    </svg>
+                    <span>tuija.christiansen@hypertieto.fi</span>
+                </a>
+                <a href="tel:+358505681187" class="contact-link">
+                    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
+                        <path fill="currentColor"
+                            d="M511.7 387.3c-2.2 49.6-42.2 89.6-91.8 91.8-52.8 2.4-105.6-14.2-152.8-47.2-47.2-33-85.6-77.6-114.4-129.6-28.8-52-44.8-108.8-47.2-161.6-2.2-49.6 39.2-91.6 88.8-93.8 23.2-1 46.4 6.4 64.8 21.6l46.4 37.6c18.4 15.2 24.8 40.8 16.8 63.2l-20.8 57.6c-4.8 13.6-16.8 23.2-31.2 25.6l-52.8 8.8c14.4 28.8 34.4 55.2 58.4 77.6 24 22.4 51.2 40.8 80 54.4l8.8-52.8c2.4-14.4 12-26.4 25.6-31.2l57.6-20.8c22.4-8 48-1.6 63.2 16.8l37.6 46.4c15.2 18.4 22.6 41.6 21.6 64.8z" />
+                    </svg>
+                    <span>+358 50 5681187</span>
+                </a>
+            </div>
+            <a href="https://www.linkedin.com/in/tuija-christiansen-08aa6456/" class="linkedin-btn" target="_blank"
+                rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="linkedin-icon" aria-hidden="true">
+                    <path fill="currentColor"
+                        d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.3 107 0 82.7 0 53.5A53.5 53.5 0 0 1 53.5 0C82.7 0 107 24.3 107 53.5c0 29.2-24.3 53.5-53.5 53.5zM447.9 448h-92.4V304.1c0-34.3-12.3-57.7-43.1-57.7-23.5 0-37.6 15.8-43.8 31.1-2.2 5.3-2.8 12.7-2.8 20.1V448h-92.4s1.2-270.7 0-299.1h92.4v42.4c12.3-19 34.3-46 83.5-46 61 0 107 39.8 107 125.4V448z" />
+                </svg>
+                <span>Let's connect!</span>
+            </a>
         </section>
-
         <section id="contact-form" class="contact-form">
             <h2>Lähetä viesti</h2>
             <form action="#" method="post" novalidate>
                 <label for="name">Nimi</label>
                 <input id="name" name="name" type="text" required minlength="2">
-
                 <label for="email">Sähköposti</label>
                 <input id="email" name="email" type="email" required>
-
                 <label for="phone">Puhelin</label>
                 <input id="phone" name="phone" type="tel" placeholder="+358 50 5681187">
-
                 <label for="budget">Arvioitu budjetti tai tiimin koko</label>
                 <input id="budget" name="budget" type="number" min="0" max="1000000">
-
                 <label for="service">Palvelu</label>
                 <select id="service" name="service" required>
                     <option value="" disabled selected>Valitse palvelu</option>
@@ -94,7 +101,6 @@
                     <option value="events">Tapahtumat & kokoukset</option>
                     <option value="travel">Kalenteri & matkat</option>
                 </select>
-
                 <fieldset>
                     <legend>Toivottu kieli</legend>
                     <label><input type="checkbox" name="lang" value="fi"> Suomi</label>
@@ -103,22 +109,17 @@
                     <label><input type="checkbox" name="lang" value="de"> Saksa</label>
                     <label><input type="checkbox" name="lang" value="en"> Englanti</label>
                 </fieldset>
-
                 <label for="start">Toivottu aloituspäivä</label>
                 <input id="start" name="start" type="date">
-
                 <label for="message">Projektin lyhyt kuvaus</label>
                 <textarea id="message" name="message" rows="6" required minlength="10"></textarea>
-
                 <label class="consent">
                     <input type="checkbox" id="consent" name="consent" required>
                     Hyväksyn tietojen käsittelyn yhteydenottoa varten.
                 </label>
-
                 <button class="btn btn-primary" type="submit">Lähetä viesti</button>
             </form>
         </section>
-
         <section class="contact-gallery">
             <h2>Tapahtumien tunnelmia</h2>
             <div class="gallery-grid">
@@ -133,10 +134,42 @@
             </div>
         </section>
     </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>Viimeksi päivitetty: <time datetime="2025-12-06">6.12.2025</time></p>
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-grid">
+            <div>
+                <h3>Hypertieto</h3>
+                <p>Tuija Christiansen · Virtuaali Johdon Assistentti</p>
+                <div class="footer-contact">
+                    <a href="mailto:tuija.christiansen@hypertieto.fi" class="contact-link">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M502.3 190.8 327.4 338.2c-22.2 18.9-54.6 18.9-76.8 0L9.7 190.8C3.9 186.1 0 178.7 0 170.7V96c0-26.5 21.5-48 48-48h416c26.5 0 48 21.5 48 48v74.7c0 8-3.9 15.4-9.7 20.1zM0 224v192c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V224L327.4 371.4c-22.2 18.9-54.6 18.9-76.8 0L0 224z" />
+                        </svg>
+                        <span>tuija.christiansen@hypertieto.fi</span>
+                    </a>   
+                    <a href="tel:+358505681187" class="contact-link">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M511.7 387.3c-2.2 49.6-42.2 89.6-91.8 91.8-52.8 2.4-105.6-14.2-152.8-47.2-47.2-33-85.6-77.6-114.4-129.6-28.8-52-44.8-108.8-47.2-161.6-2.2-49.6 39.2-91.6 88.8-93.8 23.2-1 46.4 6.4 64.8 21.6l46.4 37.6c18.4 15.2 24.8 40.8 16.8 63.2l-20.8 57.6c-4.8 13.6-16.8 23.2-31.2 25.6l-52.8 8.8c14.4 28.8 34.4 55.2 58.4 77.6 24 22.4 51.2 40.8 80 54.4l8.8-52.8c2.4-14.4 12-26.4 25.6-31.2l57.6-20.8c22.4-8 48-1.6 63.2 16.8l37.6 46.4c15.2 18.4 22.6 41.6 21.6 64.8z" />
+                        </svg>
+                        <span>+358 50 5681187</span>
+                    </a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/tuija-christiansen-08aa6456/" class="linkedin-btn" target="_blank"
+                        rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="linkedin-icon"
+                            aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.3 107 0 82.7 0 53.5A53.5 53.5 0 0 1 53.5 0C82.7 0 107 24.3 107 53.5c0 29.2-24.3 53.5-53.5 53.5zM447.9 448h-92.4V304.1c0-34.3-12.3-57.7-43.1-57.7-23.5 0-37.6 15.8-43.8 31.1-2.2 5.3-2.8 12.7-2.8 20.1V448h-92.4s1.2-270.7 0-299.1h92.4v42.4c12.3-19 34.3-46 83.5-46 61 0 107 39.8 107 125.4V448z" />
+                        </svg>
+                        <span>Let's connect!</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-meta">
+                <p>Viimeksi päivitetty: <time datetime="2025-12-06">6.12.2025</time></p>
+            </div>
         </div>
     </footer>
     <script src="../js/main.js" defer></script>

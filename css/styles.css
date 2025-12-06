@@ -60,7 +60,6 @@ body{
   width: 100%;
 }
 
-/* Left: logo; Right: language + menu */
 .header-right{
   margin-left: auto;
   display: flex;
@@ -109,41 +108,14 @@ body{
   padding: 0.5rem;
   border-radius: 6px;
 }
-/* Hover: black background and white text for nav links and mobile menu */
 .main-nav a:hover,
-.main-nav a:focus {
+.main-nav a:focus{
   background: #000;
   color: #fff;
   transition: background .18s ease, color .18s ease;
 }
 
-.mobile-menu nav a:hover,
-.mobile-menu nav a:focus {
-  background: #000;
-  color: #fff;
-  transition: background .18s ease, color .18s ease;
-}
-
-/* Optional: buttons and CTAs */
-.btn:hover,
-.btn:focus,
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-outline:hover,
-.btn-outline:focus {
-  background: #000;
-  color: #fff;
-  border-color: transparent;
-  transition: background .18s ease, color .18s ease;
-}
-
-/* Ensure focus remains visible and accessible */
-:focus-visible {
-  outline: var(--focus);
-  outline-offset: 2px;
-}
-
-/* Hamburger button (desktop hidden on wide screens) */
+/* Hamburger button */
 .menu-toggle{
   width: 44px;
   height: 36px;
@@ -181,11 +153,7 @@ body{
 }
 .hamburger::before{ top: -7px; }
 .hamburger::after{ top: 7px; }
-
-/* When menu open, animate to X */
-.menu-toggle[aria-expanded="true"] .hamburger{
-  background: transparent;
-}
+.menu-toggle[aria-expanded="true"] .hamburger{ background: transparent; }
 .menu-toggle[aria-expanded="true"] .hamburger::before{
   transform: translateY(7px) rotate(45deg);
 }
@@ -196,34 +164,22 @@ body{
 /* =========================
    Mobile menu overlay
    ========================= */
-/* Fullscreen overlay with centered nav; links aligned to right by default */
 .mobile-menu{
   position: fixed;
   inset: 0;
   display: grid;
   place-items: center;
-  background: linear-gradient(rgba(6,18,30,0.75), rgba(6,18,30,0.75));
+  background: rgba(6,18,30,0.75);
   z-index: 120;
   padding: 2.5rem 1rem;
   transition: opacity .25s ease, transform .25s ease;
   opacity: 0;
   transform: scale(.98);
 }
-.mobile-menu[hidden]{
-  display: none;
-}
-.mobile-menu[aria-hidden="false"]{
-  opacity: 1;
-  transform: scale(1);
-}
+.mobile-menu[hidden]{ display: none; }
+.mobile-menu[aria-hidden="false"]{ opacity: 1; transform: scale(1); }
 
-/* Nav container inside overlay */
-.mobile-menu nav{
-  width: 100%;
-  max-width: 420px; /* adjust as needed */
-}
-
-/* Vertical list, right-aligned */
+.mobile-menu nav{ width: 100%; max-width: 420px; }
 .mobile-menu nav ul{
   list-style: none;
   margin: 0;
@@ -231,10 +187,8 @@ body{
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  align-items: flex-end; /* key: align links to the right */
+  align-items: flex-end; /* right align items */
 }
-
-/* Links fill the nav width but text is right-aligned */
 .mobile-menu nav a{
   color: #fff;
   text-decoration: none;
@@ -243,16 +197,16 @@ body{
   border-radius: 8px;
   background: transparent;
   width: 100%;
-  text-align: right; /* key: text alignment */
+  text-align: right;
   box-sizing: border-box;
 }
-.mobile-menu nav a:focus,
-.mobile-menu nav a:hover{
-  background: rgba(255,255,255,0.06);
-  outline: none;
+.mobile-menu nav a:hover,
+.mobile-menu nav a:focus{
+  background: #000;
+  color: #fff;
 }
 
-/* Small screens: center links for very narrow devices */
+/* Narrow screens: center links */
 @media (max-width: 420px){
   .mobile-menu nav ul{ align-items: center; }
   .mobile-menu nav a{ text-align: center; max-width: 100%; }
@@ -261,9 +215,7 @@ body{
 /* =========================
    Hero
    ========================= */
-.hero{
-  padding: 2.5rem 0;
-}
+.hero{ padding: 2.5rem 0; }
 .hero-grid{
   display: grid;
   grid-template-columns: 1fr 420px;
@@ -286,16 +238,23 @@ body{
   color: var(--text);
   border: 1px solid transparent;
 }
-.btn-primary{
-  background: var(--accent);
+.btn-primary{ background: var(--accent); color: #fff; }
+.btn-outline{ background: transparent; border: 1px solid #cfe3fb; }
+.btn:hover,
+.btn:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-outline:hover,
+.btn-outline:focus{
+  background: #000;
   color: #fff;
-}
-.btn-outline{
-  background: transparent;
-  border: 1px solid #cfe3fb;
+  border-color: transparent;
+  transition: background .18s ease, color .18s ease;
 }
 
-/* Highlights */
+/* =========================
+   Highlights
+   ========================= */
 .highlights{
   list-style: none;
   padding: 0;
@@ -344,6 +303,34 @@ body{
 }
 
 /* =========================
+   Contact links (shared)
+   ========================= */
+.footer-contact{
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+.contact-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text);           /* page content default */
+  text-decoration: none;
+  font-weight: 500;
+}
+.contact-link:hover,
+.contact-link:focus{
+  color: var(--accent);         /* professional hover */
+}
+.contact-icon{
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: currentColor;           /* SVG follows text color */
+}
+
+/* =========================
    Contact form
    ========================= */
 .contact-form form{
@@ -380,61 +367,40 @@ body{
   margin-top: 2rem;
   background: url("/img/background.jpeg") no-repeat center center;
   background-size: cover;
-  color: #ffffff;
+  color: #fff;                  /* default footer text color */
   position: relative;
 }
 .site-footer::before{
   content:"";
   position:absolute;
   inset:0;
-  background: rgba(0,0,0,0.4); /* dark overlay for readability */
+  background: rgba(0,0,0,0.4);  /* overlay for readability */
   z-index:0;
 }
 .site-footer .container,
 .site-footer .footer-grid,
-.site-footer .footer-social{
+.site-footer .footer-social,
+.site-footer .footer-contact{
   position:relative;
   z-index:1;
 }
 
-/* Footer contact layout */
-.footer-contact{
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 1rem;
+/* Footer contact overrides (white on dark) */
+.site-footer .contact-link{
+  color:#fff;
 }
-
-.contact-link{
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #fff; /* adjust based on footer background */
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.contact-link:hover,
-.contact-link:focus{
-  color: #0a66c2; /* LinkedIn blue or accent color */
-}
-
-.contact-icon{
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
+.site-footer .contact-link:hover,
+.site-footer .contact-link:focus{
+  color:#cfe3fb;                /* light hover for contrast */
 }
 
 /* LinkedIn button in footer */
-.footer-social{
-  margin-top: 1rem;
-}
-
+.footer-social{ margin-top: 1rem; }
 .linkedin-btn{
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #0a66c2; /* LinkedIn blue */
+  background: #0a66c2;          /* LinkedIn blue */
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -442,19 +408,17 @@ body{
   font-weight: 600;
   transition: background .2s ease, color .2s ease;
 }
-
 .linkedin-btn:hover,
 .linkedin-btn:focus{
-  background: #000; /* black on hover */
+  background: #000;             /* black on hover */
   color: #fff;
 }
-
 .linkedin-icon{
   width: 20px;
   height: 20px;
   flex-shrink: 0;
+  fill: currentColor;
 }
-
 
 /* =========================
    Accessibility focus visible
@@ -465,43 +429,48 @@ body{
 /* =========================
    Responsive breakpoints
    ========================= */
-   @media (min-width: 701px){
-    .main-nav{display:flex;}
-    .menu-toggle{display:none;}
-      .mobile-menu{display:none;}
+/* Desktop: show main nav, hide hamburger & overlay */
+@media (min-width: 701px){
+  .main-nav{ display:flex; }
+  .menu-toggle{ display:none; }
+  .mobile-menu{ display:none; }
 }
-   @media (max-width: 1000px){
-  .hero-grid{grid-template-columns: 1fr 320px;}
-  .service-grid{grid-template-columns: repeat(2, 1fr);}
+
+/* Tablets/Large phones adjustments */
+@media (max-width: 1000px){
+  .hero-grid{ grid-template-columns: 1fr 320px; }
+  .service-grid{ grid-template-columns: repeat(2, 1fr); }
 }
+
+/* Mobile: hide desktop nav, show hamburger */
 @media (max-width: 700px){
-  .header-inner{align-items: center;}
-  .main-nav{display: none;}
-  .menu-toggle{display:inline-flex;}
-  .hero-grid{grid-template-columns: 1fr;}
-  .service-grid{grid-template-columns: 1fr;}
-  .hero-figure{order: -1;}
-  .lang-btn img{width: 24px; height: 18px;}
+  .header-inner{ align-items: center; }
+  .main-nav{ display: none; }
+  .menu-toggle{ display: inline-flex; }
+  .hero-grid{ grid-template-columns: 1fr; }
+  .service-grid{ grid-template-columns: 1fr; }
+  .hero-figure{ order: -1; }
+  .lang-btn img{ width: 24px; height: 18px; }
 }
 
 /* =========================
    Utility classes
    ========================= */
-.text-muted{color: var(--muted);}
-.center{text-align: center;}
+.text-muted{ color: var(--muted); }
+.center{ text-align: center; }
 
 /* =========================
    Images & galleries
    ========================= */
-img{max-width: 100%; height: auto; display: block; border-radius: 6px;}
+img{ max-width: 100%; height: auto; display: block; border-radius: 6px; }
 .gallery-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-top: 1rem;
 }
-@media (max-width: 900px){.gallery-grid{grid-template-columns: repeat(2, 1fr);}}
-@media (max-width: 600px){.gallery-grid{grid-template-columns: 1fr;}}
+@media (max-width: 900px){ .gallery-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px){ .gallery-grid{ grid-template-columns: 1fr; } }
 
 .about-grid{
   display: grid;
@@ -509,7 +478,7 @@ img{max-width: 100%; height: auto; display: block; border-radius: 6px;}
   gap: 1rem;
   align-items: start;
 }
-@media (max-width: 800px){.about-grid{ grid-template-columns: 1fr; }}
+@media (max-width: 800px){ .about-grid{ grid-template-columns: 1fr; } }
 
 .additional-photos{
   display: grid;
@@ -517,13 +486,10 @@ img{max-width: 100%; height: auto; display: block; border-radius: 6px;}
   gap: 1rem;
   margin-top: 1rem;
 }
-@media (max-width: 700px){.additional-photos{grid-template-columns: 1fr;}}
+@media (max-width: 700px){ .additional-photos{ grid-template-columns: 1fr; } }
 
 /* =========================
    Small fixes and polish
    ========================= */
-/* Ensure mobile-menu links are readable on all devices */
-.mobile-menu nav a{ line-height: 1.4; }
-
-/* Prevent horizontal scroll caused by overlay or large elements */
-html, body { overflow-x: hidden; }
+.mobile-menu nav a{ line-height: 1.4; } /* readability */
+html, body { overflow-x: hidden; }      /* prevent horizontal scroll */
