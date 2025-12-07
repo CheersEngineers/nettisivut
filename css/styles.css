@@ -1,7 +1,7 @@
-/* style.css
-   Ulkoinen tyylitiedosto Hypertieto projektille.
-   Kommentit selittävät päälohkoja ja luokkien tarkoitusta.
-*/
+/*  ====================================================================================================
+    HUOM! Tässä tiedostossa muutetaan sivun visuaallista ilmettä. Muokkaa vain, jos osaat CSS:ää.
+      Muuten voit rikkoa sivun ulkoasun.
+    ====================================================================================================*/
 
 /* =========================
    Perusasetukset ja muuttujat
@@ -41,7 +41,7 @@ body{
 }
 
 /* =========================
-   Header & navigation
+   Header & navigaatio
    ========================= */
 .site-header{
   background: #F5C0C3;
@@ -67,7 +67,7 @@ body{
   gap: 0.5rem;
 }
 
-/* Language flags */
+/* Liput kielivaihtoehdoille */
 .lang-switch{
   display: flex;
   gap: 0.5rem;
@@ -94,7 +94,7 @@ body{
   box-shadow: 0 0 0 3px rgba(10,102,194,0.18);
 }
 
-/* Main navigation (desktop) */
+/* Selainversion päävalikko */
 .main-nav ul{
   list-style: none;
   margin: 0;
@@ -116,7 +116,7 @@ body{
 }
 .main-nav a[data-current="true"]{
   background: #000;
-  color: #F5C0C3;
+  color: #e2aa00;
   font-weight: 600;
 }
 
@@ -167,7 +167,7 @@ body{
 }
 
 /* =========================
-   Mobile menu overlay
+   Mobiilivalikon tausta
    ========================= */
 .mobile-menu{
   position: fixed;
@@ -192,7 +192,7 @@ body{
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  align-items: flex-end; /* right align items */
+  align-items: flex-end;
 }
 .mobile-menu nav a{
   color: #fff;
@@ -217,7 +217,6 @@ body{
   font-weight: 600;
 }
 
-/* Narrow screens: center links */
 @media (max-width: 420px){
   .mobile-menu nav ul{ align-items: center; }
   .mobile-menu nav a{ text-align: center; max-width: 100%; }
