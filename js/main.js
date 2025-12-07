@@ -1,17 +1,23 @@
 // main.js
 document.addEventListener('DOMContentLoaded', function () {
-    // --- Menu / mobile overlay (aiemmin annettu logiikka) ---
+    // --- Menu / mobile overlay ---
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     if (menuToggle && mobileMenu) {
         const firstLink = mobileMenu.querySelector('a');
+
         function openMenu() {
             menuToggle.setAttribute('aria-expanded', 'true');
             mobileMenu.removeAttribute('hidden');
             mobileMenu.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
-            if (firstLink) firstLink.focus();
+
+            // Focus the active link if present, otherwise focus the first link
+            const activeLink = mobileMenu.querySelector('a[data-current="true"]');
+            const toFocus = activeLink || firstLink;
+            if (toFocus) toFocus.focus();
         }
+
         function closeMenu() {
             menuToggle.setAttribute('aria-expanded', 'false');
             mobileMenu.setAttribute('hidden', '');
@@ -19,28 +25,33 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.style.overflow = '';
             menuToggle.focus();
         }
+
         menuToggle.addEventListener('click', function () {
             const expanded = this.getAttribute('aria-expanded') === 'true';
             if (expanded) closeMenu(); else openMenu();
         });
+
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && mobileMenu && mobileMenu.getAttribute('aria-hidden') === 'false') closeMenu();
+            if (e.key === 'Escape' && mobileMenu && mobileMenu.getAttribute('aria-hidden') === 'false') {
+                closeMenu();
+            }
         });
-        mobileMenu.addEventListener('click', function (e) { if (e.target === mobileMenu) closeMenu(); });
+
+        mobileMenu.addEventListener('click', function (e) {
+            if (e.target === mobileMenu) closeMenu();
+        });
+
         mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeMenu()));
     }
 
     // --- Language switch mapping (root-relative paths) ---
     const langMap = {
-        // Finnish -> English
         "/index.html": "/en/index.html",
         "/fi/palvelut.html": "/en/services.html",
         "/fi/minusta.html": "/en/about.html",
         "/fi/referenssit.html": "/en/case-studies.html",
         "/fi/yhteys.html": "/en/contact.html",
         "/fi/faq.html": "/en/faq.html",
-
-        // English -> Finnish
         "/en/index.html": "/index.html",
         "/en/services.html": "/fi/palvelut.html",
         "/en/about.html": "/fi/minusta.html",
@@ -62,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (btnFi) {
         btnFi.addEventListener('click', function () {
-            // Jos nykyinen on englanti, ohjaa suomen vastaavaan; muuten ohjaa juureen suomeksi
             const target = langMap[currentPath] || "/index.html";
             window.location.href = target;
         });
@@ -75,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Korostus aktiiviselle kielelle
     function highlightActive() {
         const isEn = currentPath.startsWith("/en/");
         if (btnEn) btnEn.classList.toggle("active-lang", isEn);
@@ -83,26 +92,66 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     highlightActive();
 
-    // Highlight current page in navigation
+    // Robust highlightCurrentPage with language-aware filename fallback
     function highlightCurrentPage() {
         const navLinks = document.querySelectorAll('.main-nav a, .mobile-menu a');
+        const current = normalizePath(window.location.pathname);
+
+        // helper: top-level segment (e.g., "/fi", "/en", or "/" for root)
+        function topSegment(path) {
+            const parts = path.split('/').filter(Boolean); // removes empty
+            return parts.length ? `/${parts[0]}` : '/';
+        }
+
+        const currentTop = topSegment(current);
+
         navLinks.forEach(link => {
             const href = link.getAttribute('href');
-            if (href && normalizePath(href) === currentPath) {
-                link.setAttribute('data-current', 'true');
-            } else {
+            if (!href) {
                 link.removeAttribute('data-current');
+                return;
             }
+
+            let linkPath;
+            try {
+                linkPath = normalizePath(new URL(href, location.origin).pathname);
+            } catch (err) {
+                linkPath = normalizePath(href);
+            }
+
+            // Exact match wins
+            if (linkPath === current) {
+                link.setAttribute('data-current', 'true');
+                return;
+            }
+
+            // Language-aware filename fallback:
+            // Only match by filename if both paths share the same top-level segment
+            const linkTop = topSegment(linkPath);
+            const currentFile = current.split('/').pop();
+            const linkFile = linkPath.split('/').pop();
+
+            if (currentFile && linkFile && currentFile === linkFile) {
+                // allow fallback only when both are root or both share same top-level segment
+                const bothRoot = (currentTop === '/' && linkTop === '/');
+                if (bothRoot || currentTop === linkTop) {
+                    link.setAttribute('data-current', 'true');
+                    return;
+                }
+            }
+
+            // No match
+            link.removeAttribute('data-current');
         });
     }
     highlightCurrentPage();
 
-    // Simple form validation with error messages
+    // Simple form validation
     const contactForm = document.querySelector('.contact-form form');
     if (contactForm) {
         const inputs = contactForm.querySelectorAll('input[required], textarea[required], select[required]');
-        
-        contactForm.addEventListener('submit', function(e) {
+
+        contactForm.addEventListener('submit', function (e) {
             let isValid = true;
             inputs.forEach(input => {
                 if (!input.value.trim()) {
@@ -118,9 +167,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Remove error class on input
         inputs.forEach(input => {
-            input.addEventListener('input', function() {
+            input.addEventListener('input', function () {
                 this.classList.remove('invalid');
             });
         });
