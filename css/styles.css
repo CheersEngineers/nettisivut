@@ -284,6 +284,16 @@ body{
   padding: 1rem;
   border-radius: 8px;
 }
+.service-card-media{
+  position: relative;
+  padding-top: 56.25%;
+}
+.service-card-media img{
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 /* =========================
    References and cases
