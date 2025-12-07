@@ -239,7 +239,9 @@ body{
 .lead{ color: var(--muted); margin: 0 0 1rem 0; }
 .hero-ctas{ display: flex; gap: 0.75rem; margin: 1rem 0; }
 
-/* Buttons */
+/* =========================
+   Painikkeet
+   ========================= */
 .btn{
   display: inline-block;
   padding: 0.6rem 1rem;
@@ -267,7 +269,7 @@ body{
 }
 
 /* =========================
-   Highlights
+   Korostukset
    ========================= */
 .highlights{
   list-style: none;
@@ -284,7 +286,7 @@ body{
 }
 
 /* =========================
-   Services grid
+   Palveluiden laatikot
    ========================= */
 .service-grid{
   display: grid;
@@ -308,7 +310,7 @@ body{
   width: 100%;
   height: 100%;
 }
-/* Mouse hover */
+
 .service-card:hover {
   border-color: #c9d3e7;
   background-color: #fafbff; /* slight tint */
@@ -316,13 +318,12 @@ body{
   transform: translateY(-2px);
 }
 
-/* Keyboard focus: visible ring + same elevation as hover */
 .service-card:focus {
-  outline: none; /* remove default outline to replace with custom */
+  outline: none;
   border-color: #0b57d0;
   box-shadow:
-    0 0 0 3px rgba(11, 87, 208, 0.25),  /* focus ring */
-    0 8px 24px rgba(11, 87, 208, 0.15); /* elevation */
+    0 0 0 3px rgba(11, 87, 208, 0.25),
+    0 8px 24px rgba(11, 87, 208, 0.15);
   background-color: #fafbff;
   transform: translateY(-2px);
 }
@@ -344,7 +345,7 @@ body{
 }
 
 /* =========================
-   Contact links (shared)
+   Yhteystietojen linkit
    ========================= */
 .footer-contact{
   display: flex;
@@ -356,23 +357,23 @@ body{
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--text);           /* page content default */
+  color: var(--text);
   text-decoration: none;
   font-weight: 500;
 }
 .contact-link:hover,
 .contact-link:focus{
-  color: var(--accent);         /* professional hover */
+  color: var(--accent);
 }
 .contact-icon{
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  fill: currentColor;           /* SVG follows text color */
+  fill: currentColor;
 }
 
 /* =========================
-   Contact form
+   Yhteydenottolomake
    ========================= */
 .contact-form form{
   display: grid;
@@ -428,14 +429,14 @@ body{
   margin-top: 2rem;
   background: url("/img/background.jpeg") no-repeat center center;
   background-size: cover;
-  color: #fff;                  /* default footer text color */
+  color: #fff;
   position: relative;
 }
 .site-footer::before{
   content:"";
   position:absolute;
   inset:0;
-  background: rgba(0,0,0,0.4);  /* overlay for readability */
+  background: rgba(0,0,0,0.4);
   z-index:0;
 }
 .site-footer .container,
@@ -446,22 +447,22 @@ body{
   z-index:1;
 }
 
-/* Footer contact overrides (white on dark) */
+/* Footer osion teksti valkoisena tummassa taustkuvassa*/
 .site-footer .contact-link{
   color:#fff;
 }
 .site-footer .contact-link:hover,
 .site-footer .contact-link:focus{
-  color:#cfe3fb;                /* light hover for contrast */
+  color:#cfe3fb;
 }
 
-/* LinkedIn button in footer */
+/* LinkedIn painike footerissa */
 .footer-social{ margin-top: 1rem; }
 .linkedin-btn{
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #0a66c2;          /* LinkedIn blue */
+  background: #0a66c2;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -471,7 +472,7 @@ body{
 }
 .linkedin-btn:hover,
 .linkedin-btn:focus{
-  background: #000;             /* black on hover */
+  background: #000;
   color: #fff;
 }
 .linkedin-icon{
@@ -481,29 +482,28 @@ body{
   fill: currentColor;
 }
 
-/* =========================
-   Accessibility focus visible
-   ========================= */
-:focus{ outline: none; }
+/*=========================
+  Esteettömyys fokuspisteille
+  ========================= */
+:focus{ outline: visible; }
 :focus-visible{ outline: var(--focus); outline-offset: 2px; }
 
-/* =========================
-   Responsive breakpoints
-   ========================= */
-/* Desktop: show main nav, hide hamburger & overlay */
+/*========================= 
+  Responsiiviset keskeytyskohdat
+  ========================= */
 @media (min-width: 701px){
   .main-nav{ display:flex; }
   .menu-toggle{ display:none; }
   .mobile-menu{ display:none; }
 }
 
-/* Tablets/Large phones adjustments */
+/* Pädit tai suuremma puhelimet (vaakasuunnassa)*/
 @media (max-width: 1000px){
   .hero-grid{ grid-template-columns: 1fr 320px; }
   .service-grid{ grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Mobile: hide desktop nav, show hamburger */
+/* Mobiilissa piilottaa päävalikon ja näyttää hampurilaisvalikon */
 @media (max-width: 700px){
   .header-inner{position: relative; justify-content: space-between;}
   .main-nav{display: none;}
@@ -518,13 +518,13 @@ body{
 }
 
 /* =========================
-   Utility classes
+   Pieniä apuluokkia
    ========================= */
 .text-muted{ color: var(--muted); }
 .center{ text-align: center; }
 
 /* =========================
-   Images & galleries
+   Kuvien asetukset
    ========================= */
 img{ max-width: 100%; height: auto; display: block; border-radius: 6px; }
 .gallery-grid{
@@ -553,7 +553,7 @@ img{ max-width: 100%; height: auto; display: block; border-radius: 6px; }
 @media (max-width: 700px){ .additional-photos{ grid-template-columns: 1fr; } }
 
 /* =========================
-   Small fixes and polish
+   Pieniä korjauksia ja hienosäätöä
    ========================= */
-.mobile-menu nav a{ line-height: 1.4; } /* readability */
-html, body { overflow-x: hidden; }      /* prevent horizontal scroll */
+.mobile-menu nav a{ line-height: 1.4; }
+html, body { overflow-x: hidden; }
