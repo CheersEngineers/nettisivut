@@ -1,5 +1,11 @@
 <!doctype html>
+<!--===========================================================================================
+    Hypertieto — englanninkielinen: Services for Businesses
+    Rakenne: header, main, footer
+    Muokkaa pääsisältöä kohdasta: PÄÄSISÄLTÖ
+============================================================================================-->
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +13,26 @@
         content="Project-based services: project coordination, sales support, marketing, events & meetings, calendar & travel, multilingual communication.">
     <link rel="icon" href="../img/favicon.ico">
     <title>Hypertieto – Services for Businesses</title>
+
+    <!-- Päätyylit -->
     <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Kieliversio (suomi) -->
     <link rel="alternate" href="../fi/palvelut.html" hreflang="fi">
 </head>
+
 <body>
+    <!-- ==============================================================
+       HEADER: logo, päävalikko, kielipainikkeet ja mobiilivalikko
+  ============================================================== -->
     <header class="site-header" role="banner">
         <div class="container header-inner">
+            <!-- Logo: linkki englanninkieliseen etusivuun -->
             <a href="/en/index.html" class="logo" aria-label="Hypertieto">
                 <img src="/img/logo.png" alt="Hypertieto logo" width="160" height="40">
-            </a>   
+            </a>
+
+            <!-- Päänavigaatio (desktop) -->
             <nav class="main-nav" role="navigation" aria-label="Main menu">
                 <ul>
                     <li><a href="/en/index.html">Home</a></li>
@@ -24,7 +41,9 @@
                     <li><a href="/en/case-studies.html">Case Studies</a></li>
                     <li><a href="/en/contact.html">Contact</a></li>
                 </ul>
-            </nav>   
+            </nav>
+
+            <!-- Oikea reuna: kielivalinnat ja mobiilivalikon painike -->
             <div class="header-right">
                 <div class="lang-switch" aria-hidden="false">
                     <button class="lang-btn" id="lang-fi" aria-label="Suomi" title="Suomi">
@@ -33,13 +52,17 @@
                     <button class="lang-btn" id="lang-en" aria-label="English" title="English">
                         <img src="/img/flag-en.png" alt="UK/US flag" width="28" height="20">
                     </button>
-                </div>   
+                </div>
+
+                <!-- Hampurilaispainike mobiilivalikolle -->
                 <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
                     aria-label="Open menu">
                     <span class="hamburger" aria-hidden="true"></span>
                 </button>
             </div>
-        </div>    
+        </div>
+
+        <!-- Mobiilivalikko (piilotettu oletuksena; JS näyttää/piilottaa) -->
         <div id="mobile-menu" class="mobile-menu" hidden aria-hidden="true">
             <nav role="navigation" aria-label="Mobile main menu">
                 <ul>
@@ -52,12 +75,22 @@
             </nav>
         </div>
     </header>
-    <main class="container">
+
+    <!-- =================================================================
+       PÄÄSISÄLTÖ
+       Muokkaa sisältöä tämän osion sisällä (palvelukortit ja CTA)
+  ================================================================== -->
+    <main id="main" class="container" role="main">
         <article class="services">
             <h1>Services</h1>
             <p class="lead">I provide executive assistant services delivered as projects. Fast start, reliability and
                 quality.</p>
+
+            <!-- Palvelukortit -->
             <section class="service-grid" aria-label="Service cards">
+                <!-- ===========================
+                    Kortti 1: Projektikoordinaatio
+                  ============================ -->
                 <article class="service-card">
                     <div class="service-card-media">
                         <img src="/img/project_coordination.png" alt="Project Coordination" loading="lazy">
@@ -67,6 +100,10 @@
                         <p>Planning, scheduling, reporting and stakeholder coordination.</p>
                     </div>
                 </article>
+                
+                <!-- ===========================
+                    Kortti 2: Myynnin tuki
+                  ============================ -->
                 <article class="service-card">
                     <div class="service-card-media">
                         <img src="/img/sales_support.png" alt="Sales Support" loading="lazy">
@@ -76,6 +113,10 @@
                         <p>Lead handling, campaigns, sales materials and client relations support.</p>
                     </div>
                 </article>
+                
+                <!-- ===========================
+                    Kortti 3: Markkinointi
+                  ============================ -->
                 <article class="service-card">
                     <div class="service-card-media">
                         <img src="/img/marketing.png" alt="Marketing" loading="lazy">
@@ -85,6 +126,10 @@
                         <p>Content production, presentations, publications and release planning.</p>
                     </div>
                 </article>
+                
+                <!-- ===========================
+                    Kortti 4: Tapahtumat ja kokoukset
+                  ============================ -->
                 <article class="service-card">
                     <div class="service-card-media">
                         <img src="/img/events_and_meetings.png" alt="Events and Meetings" loading="lazy">
@@ -94,6 +139,10 @@
                         <p>Agenda, logistics, participant management and follow-up.</p>
                     </div>
                 </article>
+                
+                <!-- ===========================
+                    Kortti 5: Kalenteri ja matkustus
+                  ============================ -->
                 <article class="service-card">
                     <div class="service-card-media">
                         <img src="/img/calendar_and_travel.png" alt="Calendar and Travel" loading="lazy">
@@ -103,6 +152,10 @@
                         <p>Prioritisation, bookings, change management and travel planning.</p>
                     </div>
                 </article>
+                
+                <!-- ===========================
+                    Kortti 6: Monikielinen viestintä
+                  ============================ -->
                 <article class="service-card">
                     <div class="service-card-media">
                         <img src="/img/multilingual_communication.png" alt="Multilingual Communication" loading="lazy">
@@ -112,39 +165,49 @@
                         <p>Translations and writing in Finnish · Swedish · Norwegian · German · English.</p>
                     </div>
                 </article>
-            </section>
+
+
+            <!-- CTA-rivi -->
             <div class="cta-strip">
                 <a class="btn btn-primary" href="contact.html#book">Book a 20 min call</a>
                 <a class="btn btn-outline" href="contact.html#quote">Request a quote</a>
             </div>
         </article>
     </main>
+
+    <!-- ==============================================================
+       FOOTER: yritystiedot, yhteystiedot ja sosiaalinen media
+    ============================================================== -->
     <footer class="site-footer" role="contentinfo">
         <div class="container footer-grid">
             <div>
                 <h3>Hypertieto</h3>
                 <p>Tuija Christiansen · Virtual Executive Assistant</p>
+
+                <!-- Yhteystiedot -->
                 <div class="footer-contact">
                     <a href="mailto:tuija.christiansen@hypertieto.fi" class="contact-link">
-                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
+                        <svg class="contact-icon" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
                             <path fill="currentColor"
                                 d="M502.3 190.8 327.4 338.2c-22.2 18.9-54.6 18.9-76.8 0L9.7 190.8C3.9 186.1 0 178.7 0 170.7V96c0-26.5 21.5-48 48-48h416c26.5 0 48 21.5 48 48v74.7c0 8-3.9 15.4-9.7 20.1zM0 224v192c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V224L327.4 371.4c-22.2 18.9-54.6 18.9-76.8 0L0 224z" />
                         </svg>
                         <span>tuija.christiansen@hypertieto.fi</span>
                     </a>
+
                     <a href="tel:+358505681187" class="contact-link">
-                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <svg class="contact-icon" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
                             <path fill="currentColor"
                                 d="M511.7 387.3c-2.2 49.6-42.2 89.6-91.8 91.8-52.8 2.4-105.6-14.2-152.8-47.2-47.2-33-85.6-77.6-114.4-129.6-28.8-52-44.8-108.8-47.2-161.6-2.2-49.6 39.2-91.6 88.8-93.8 23.2-1 46.4 6.4 64.8 21.6l46.4 37.6c18.4 15.2 24.8 40.8 16.8 63.2l-20.8 57.6c-4.8 13.6-16.8 23.2-31.2 25.6l-52.8 8.8c14.4 28.8 34.4 55.2 58.4 77.6 24 22.4 51.2 40.8 80 54.4l8.8-52.8c2.4-14.4 12-26.4 25.6-31.2l57.6-20.8c22.4-8 48-1.6 63.2 16.8l37.6 46.4c15.2 18.4 22.6 41.6 21.6 64.8z" />
                         </svg>
                         <span>+358 50 5681187</span>
                     </a>
                 </div>
+
+                <!-- LinkedIn -->
                 <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/tuija-christiansen-08aa6456/" class="linkedin-btn" target="_blank"
-                        rel="noopener">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="linkedin-icon"
-                            aria-hidden="true">
+                    <a href="https://www.linkedin.com/in/tuija-christiansen-08aa6456/" class="linkedin-btn"
+                        target="_blank" rel="noopener noreferrer">
+                        <svg class="linkedin-icon" viewBox="0 0 448 512" aria-hidden="true" focusable="false">
                             <path fill="currentColor"
                                 d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.3 107 0 82.7 0 53.5A53.5 53.5 0 0 1 53.5 0C82.7 0 107 24.3 107 53.5c0 29.2-24.3 53.5-53.5 53.5zM447.9 448h-92.4V304.1c0-34.3-12.3-57.7-43.1-57.7-23.5 0-37.6 15.8-43.8 31.1-2.2 5.3-2.8 12.7-2.8 20.1V448h-92.4s1.2-270.7 0-299.1h92.4v42.4c12.3-19 34.3-46 83.5-46 61 0 107 39.8 107 125.4V448z" />
                         </svg>
@@ -152,11 +215,16 @@
                     </a>
                 </div>
             </div>
+
+            <!-- Päivämäärä / metatiedot -->
             <div class="footer-meta">
                 <p>Last updated: <time datetime="2025-12-06">6 Dec 2025</time></p>
             </div>
         </div>
     </footer>
+
+    <!-- Pää-JavaScript -->
     <script src="../js/main.js" defer></script>
 </body>
+
 </html>

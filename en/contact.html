@@ -1,4 +1,10 @@
 <!doctype html>
+<!--===========================================================================================
+    Hypertieto — englanninkielinen sivu: Contact
+    Rakenne: header, main, footer
+    Muokkaa pääsisältöä kohdasta: PÄÄSISÄLTÖ
+===========================================================================================-->
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,15 +12,25 @@
     <meta name="description" content="Contact Hypertieto. Book a 20 min call or request a quote for a project.">
     <link rel="icon" href="../img/favicon.ico">
     <title>Hypertieto – Contact</title>
+
+    <!-- Päätyylit -->
     <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Kieliversiot / SEO -->
     <link rel="alternate" href="../fi/yhteys.html" hreflang="fi">
 </head>
 <body>
+    <!-- ==============================================================
+        Header: logo, päävalikko, kielipainikkeet ja mobiilivalikko
+    =============================================================== -->
     <header class="site-header" role="banner">
         <div class="container header-inner">
+            <!-- Logo: linkki englanninkieliseen etusivuun -->
             <a href="/en/index.html" class="logo" aria-label="Hypertieto">
                 <img src="/img/logo.png" alt="Hypertieto logo" width="160" height="40">
-            </a>    
+            </a>
+            
+            <!-- Päävalikko (näkyy suuremmilla näytöillä) -->
             <nav class="main-nav" role="navigation" aria-label="Main menu">
                 <ul>
                     <li><a href="/en/index.html">Home</a></li>
@@ -23,8 +39,11 @@
                     <li><a href="/en/case-studies.html">Case Studies</a></li>
                     <li><a href="/en/contact.html">Contact</a></li>
                 </ul>
-            </nav>   
+            </nav>
+
+            <!-- Oikean reuna: kielivalinta ja mobiilivalikon painike -->
             <div class="header-right">
+                <!-- Kielivalinnat -->
                 <div class="lang-switch" aria-hidden="false">
                     <button class="lang-btn" id="lang-fi" aria-label="Suomi" title="Suomi">
                         <img src="/img/flag-fi.png" alt="Suomen lippu" width="28" height="20">
@@ -32,13 +51,17 @@
                     <button class="lang-btn" id="lang-en" aria-label="English" title="English">
                         <img src="/img/flag-en.png" alt="UK/US flag" width="28" height="20">
                     </button>
-                </div>   
+                </div>
+
+                <!-- Hampurilaispainike mobiilivalikolle -->
                 <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
                     aria-label="Open menu">
                     <span class="hamburger" aria-hidden="true"></span>
                 </button>
             </div>
         </div>
+
+        <!-- Mobiilivalikko (piilotettu oletuksena; JS näyttää/piilottaa) -->
         <div id="mobile-menu" class="mobile-menu" hidden aria-hidden="true">
             <nav role="navigation" aria-label="Mobile main menu">
                 <ul>
@@ -51,7 +74,14 @@
             </nav>
         </div>
     </header>
+    <!-- ==============================================================
+        PÄÄSISÄLTÖ
+        Käyttäjälle ohjeet: Täällä saa tehdä muutoksia sisältöön!
+
+    =============================================================== -->
+
     <main class="container contact-page">
+        <!-- Yhteystiedot -->
         <h1>Contact</h1>
         <p class="lead">Contact by email or phone, or send a short project brief using the form below.</p>
         <section class="contact-info">
@@ -79,6 +109,8 @@
                     <span>Let's connect!</span>
                 </a>
         </section>
+
+        <!-- Yhteydenottolomake -->
         <section id="contact-form" class="contact-form">
             <h2>Send a message</h2>
             <form action="#" method="post" novalidate>
@@ -118,6 +150,8 @@
                 <button class="btn btn-primary" type="submit">Send message</button>
             </form>
         </section>
+
+        <!-- Kuvagalleria -->
         <section class="contact-gallery">
             <h2>Event highlights</h2>
             <div class="gallery-grid">
@@ -133,11 +167,17 @@
             </div>
         </section>
     </main>
+
+    <!-- ==============================================================
+           ALATUNNISTE / FOOTER
+        =============================================================== -->
     <footer class="site-footer" role="contentinfo">
         <div class="container footer-grid">
             <div>
                 <h3>Hypertieto</h3>
                 <p>Tuija Christiansen · Virtual Executive Assistant</p>
+                
+                <!-- Yhteystiedot -->
                 <div class="footer-contact">
                     <a href="mailto:tuija.christiansen@hypertieto.fi" class="contact-link">
                         <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
@@ -154,6 +194,8 @@
                         <span>+358 50 5681187</span>
                     </a>
                 </div>
+
+                <!-- LinkedIn -->
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/in/tuija-christiansen-08aa6456/" class="linkedin-btn" target="_blank"
                         rel="noopener">
@@ -166,11 +208,16 @@
                     </a>
                 </div>
             </div>
+
+            <!-- Päivitysaikaleima -->
             <div class="footer-meta">
                 <p>Last updated: <time datetime="2025-12-06">6 Dec 2025</time></p>
             </div>
         </div>
     </footer>
+
+    <!-- Pää-JavaScript -->
     <script src="../js/main.js" defer></script>
 </body>
+
 </html>

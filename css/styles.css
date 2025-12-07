@@ -1,6 +1,6 @@
 /*  ====================================================================================================
-    HUOM! Tässä tiedostossa muutetaan sivun visuaallista ilmettä. Muokkaa vain, jos osaat CSS:ää.
-      Muuten voit rikkoa sivun ulkoasun.
+    HUOM! Tässä tiedostossa muutetaan sivun visuaallista ilmettä. Jonas muokkaa tätä tarvittaessa.
+    Jos et tiedä mitä teet, älä muokkaa tätä tiedostoa vahingossa.
     ====================================================================================================*/
 
 /* =========================
@@ -10,8 +10,10 @@
   --bg: #ffffff;
   --text: #0b1a2b;
   --muted: #6b7a89;
-  --accent: #cd9b05d8;
+  --accent: #cd9b05;            /* pääaccent-väri (kulta) */
+  --accent-alpha: rgba(205,155,5,0.85);
   --accent-2: #0b8f6b;
+  --header-pink: #F5C0C3;       /* headerin / mobiilin korostusväri (vaaleanpunainen) */
   --max-width: 1200px;
   --container-padding: 1rem;
   --radius: 8px;
@@ -20,6 +22,7 @@
   color-scheme: light;
 }
 
+/* Perusasetukset */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body{
@@ -41,10 +44,10 @@ body{
 }
 
 /* =========================
-   Header & navigaatio
+   Header ja navigaatio
    ========================= */
 .site-header{
-  background: #F5C0C3;
+  background: var(--header-pink);
   border-bottom: 1px solid #e6eef6;
   position: sticky;
   top: 0;
@@ -94,7 +97,7 @@ body{
   box-shadow: 0 0 0 3px rgba(10,102,194,0.18);
 }
 
-/* Selainversion päävalikko */
+/* Päävalikko (desktop) */
 .main-nav ul{
   list-style: none;
   margin: 0;
@@ -120,7 +123,7 @@ body{
   font-weight: 600;
 }
 
-/* Hamburger button */
+/* Hampurilaispainike */
 .menu-toggle{
   width: 44px;
   height: 36px;
@@ -138,7 +141,7 @@ body{
   box-shadow: 0 0 0 3px rgba(10,102,194,0.18);
 }
 
-/* Hamburger lines */
+/* Hampurilaisvalikon sivut */
 .hamburger,
 .hamburger::before,
 .hamburger::after{
@@ -167,7 +170,7 @@ body{
 }
 
 /* =========================
-   Mobiilivalikon tausta
+   Mobiilivalikko
    ========================= */
 .mobile-menu{
   position: fixed;
@@ -211,9 +214,10 @@ body{
   color: #fff;
 }
 
+/* Mobiilin aktiivinen linkki käyttää headerin vaaleanpunaista väriä */
 .mobile-menu nav a[data-current="true"] {
   background: #000;
-  color: #F5C0C3;
+  color: var(--header-pink);
   font-weight: 600;
 }
 
@@ -223,7 +227,7 @@ body{
 }
 
 /* =========================
-   Hero
+   Hero-osio
    ========================= */
 .hero{ padding: 2.5rem 0; }
 .hero-grid{
@@ -253,7 +257,7 @@ body{
   cursor: pointer;
   font-weight: 500;
 }
-.btn-primary{ background: var(--accent); color: #fff; }
+.btn-primary{ background: var(--accent-alpha); color: #fff; }
 .btn-outline{ background: transparent; border: 1px solid #cfe3fb; }
 .btn:hover,
 .btn:focus,
@@ -269,7 +273,7 @@ body{
 }
 
 /* =========================
-   Korostukset
+   Korostukset ja listat
    ========================= */
 .highlights{
   list-style: none;
@@ -286,7 +290,7 @@ body{
 }
 
 /* =========================
-   Palveluiden laatikot
+   Palveluiden kortit
    ========================= */
 .service-grid{
   display: grid;
@@ -313,7 +317,7 @@ body{
 
 .service-card:hover {
   border-color: #c9d3e7;
-  background-color: #fafbff; /* slight tint */
+  background-color: #fafbff;
   box-shadow: 0 8px 24px rgba(11, 87, 208, 0.15);
   transform: translateY(-2px);
 }
@@ -327,8 +331,9 @@ body{
   background-color: #fafbff;
   transform: translateY(-2px);
 }
+
 /* =========================
-   References and cases
+   Referenssit ja lainaukset
    ========================= */
 .cases .case{ margin-bottom: 1.25rem; }
 .cases dl{
@@ -345,7 +350,7 @@ body{
 }
 
 /* =========================
-   Yhteystietojen linkit
+   Footer ja yhteystiedot
    ========================= */
 .footer-contact{
   display: flex;
@@ -372,9 +377,138 @@ body{
   fill: currentColor;
 }
 
+.site-footer{
+  border-top: 1px solid #e6eef6;
+  padding: 1.25rem 0;
+  margin-top: 2rem;
+  background: url("/img/background.jpeg") no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+}
+.site-footer::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.4);
+  z-index:0;
+}
+.site-footer .container,
+.site-footer .footer-grid,
+.site-footer .footer-social,
+.site-footer .footer-contact{
+  position:relative;
+  z-index:1;
+}
+.site-footer .contact-link{
+  color:#fff;
+}
+.site-footer .contact-link:hover,
+.site-footer .contact-link:focus{
+  color:#cfe3fb;
+}
+
+/* LinkedIn painike footerissa */
+.footer-social{ margin-top: 1rem; }
+.linkedin-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #0a66c2;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background .2s ease, color .2s ease;
+}
+.linkedin-btn:hover,
+.linkedin-btn:focus{
+  background: #000;
+  color: #fff;
+}
+.linkedin-icon{
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
 /* =========================
-   Yhteydenottolomake
+   Esteettömyys: fokus
    ========================= */
+/* Näppäimistöfokus näkyviin, hiiriklikkauksissa ei näytetä oletuskehystä */
+:focus:not(:focus-visible) { outline: none; }
+:focus-visible { outline: var(--focus); outline-offset: 2px; }
+
+/* =========================
+   Responsiiviset katkaisupisteet
+   ========================= */
+@media (min-width: 701px){
+  .main-nav{ display:flex; }
+  .menu-toggle{ display:none; }
+  .mobile-menu{ display:none; }
+}
+
+/* Tablet ja pienemmät näytöt */
+@media (max-width: 1000px){
+  .hero-grid{ grid-template-columns: 1fr 320px; }
+  .service-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobiili */
+@media (max-width: 700px){
+  .header-inner{position: relative; justify-content: space-between;}
+  .main-nav{display: none;}
+  .menu-toggle{position: static; transform: none; margin: 0; z-index: 60;}
+  .mobile-menu nav ul {align-items: center; text-align: center;}
+  .mobile-menu nav a {text-align: center; max-width: 100%;  width: 100%;}
+  .header-right {margin-left: auto;display: flex; align-items: center; gap: 0.5rem;}
+  .hero-grid{grid-template-columns: 1fr;}
+  .service-grid{grid-template-columns: 1fr;}
+  .hero-figure{order: -1;} /* kuva näkyy ensin mobiilissa, teksti jälkeen */
+  .lang-btn img{width: 24px; height: 18px;}
+}
+
+/* =========================
+   Apuluokat
+   ========================= */
+.text-muted{ color: var(--muted); }
+.center{ text-align: center; }
+
+/* =========================
+   Kuvien asetukset ja galleriat
+   ========================= */
+img{ max-width: 100%; height: auto; display: block; border-radius: 6px; }
+.gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+@media (max-width: 900px){ .gallery-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px){ .gallery-grid{ grid-template-columns: 1fr; } }
+
+.about-grid{
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+@media (max-width: 800px){ .about-grid{ grid-template-columns: 1fr; } }
+
+.additional-photos{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+@media (max-width: 700px){ .additional-photos{ grid-template-columns: 1fr; } }
+
+/* =========================
+   Lomakkeet ja validointi
+   ========================= */
+.mobile-menu nav a{ line-height: 1.4; }
 .contact-form form{
   display: grid;
   gap: 0.75rem;
@@ -421,139 +555,6 @@ body{
 }
 
 /* =========================
-   Footer
-   ========================= */
-.site-footer{
-  border-top: 1px solid #e6eef6;
-  padding: 1.25rem 0;
-  margin-top: 2rem;
-  background: url("/img/background.jpeg") no-repeat center center;
-  background-size: cover;
-  color: #fff;
-  position: relative;
-}
-.site-footer::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: rgba(0,0,0,0.4);
-  z-index:0;
-}
-.site-footer .container,
-.site-footer .footer-grid,
-.site-footer .footer-social,
-.site-footer .footer-contact{
-  position:relative;
-  z-index:1;
-}
-
-/* Footer osion teksti valkoisena tummassa taustkuvassa*/
-.site-footer .contact-link{
-  color:#fff;
-}
-.site-footer .contact-link:hover,
-.site-footer .contact-link:focus{
-  color:#cfe3fb;
-}
-
-/* LinkedIn painike footerissa */
-.footer-social{ margin-top: 1rem; }
-.linkedin-btn{
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #0a66c2;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background .2s ease, color .2s ease;
-}
-.linkedin-btn:hover,
-.linkedin-btn:focus{
-  background: #000;
-  color: #fff;
-}
-.linkedin-icon{
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  fill: currentColor;
-}
-
-/*=========================
-  Esteettömyys fokuspisteille
-  ========================= */
-:focus{ outline: visible; }
-:focus-visible{ outline: var(--focus); outline-offset: 2px; }
-
-/*========================= 
-  Responsiiviset keskeytyskohdat
-  ========================= */
-@media (min-width: 701px){
-  .main-nav{ display:flex; }
-  .menu-toggle{ display:none; }
-  .mobile-menu{ display:none; }
-}
-
-/* Pädit tai suuremma puhelimet (vaakasuunnassa)*/
-@media (max-width: 1000px){
-  .hero-grid{ grid-template-columns: 1fr 320px; }
-  .service-grid{ grid-template-columns: repeat(2, 1fr); }
-}
-
-/* Mobiilissa piilottaa päävalikon ja näyttää hampurilaisvalikon */
-@media (max-width: 700px){
-  .header-inner{position: relative; justify-content: space-between;}
-  .main-nav{display: none;}
-  .menu-toggle{position: static; transform: none; margin: 0; z-index: 60;}
-  .mobile-menu nav ul {align-items: center; text-align: center;}
-  .mobile-menu nav a {text-align: center; max-width: 100%;  width: 100%;}
-  .header-right {margin-left: auto;display: flex; align-items: center; gap: 0.5rem;}
-  .hero-grid{grid-template-columns: 1fr;}
-  .service-grid{grid-template-columns: 1fr;}
-  .hero-figure{order: -1;}
-  .lang-btn img{width: 24px; height: 18px;}
-}
-
-/* =========================
-   Pieniä apuluokkia
-   ========================= */
-.text-muted{ color: var(--muted); }
-.center{ text-align: center; }
-
-/* =========================
-   Kuvien asetukset
-   ========================= */
-img{ max-width: 100%; height: auto; display: block; border-radius: 6px; }
-.gallery-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-top: 1rem;
-}
-@media (max-width: 900px){ .gallery-grid{ grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 600px){ .gallery-grid{ grid-template-columns: 1fr; } }
-
-.about-grid{
-  display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 1rem;
-  align-items: start;
-}
-@media (max-width: 800px){ .about-grid{ grid-template-columns: 1fr; } }
-
-.additional-photos{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 1rem;
-}
-@media (max-width: 700px){ .additional-photos{ grid-template-columns: 1fr; } }
-
-/* =========================
    Pieniä korjauksia ja hienosäätöä
    ========================= */
-.mobile-menu nav a{ line-height: 1.4; }
 html, body { overflow-x: hidden; }

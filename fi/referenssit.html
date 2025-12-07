@@ -1,4 +1,9 @@
 <!doctype html>
+<!-- =====================================================================
+     Referenssisivu – Hypertieto
+     Sisältää case-kuvaukset, kuvat ja asiakaspalautteita.
+====================================================================== -->
+
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
@@ -6,38 +11,56 @@
     <meta name="description" content="Referenssit ja casekuvaukset: UPM, Rautaruukki, Tulikivi, Fazer, BCG, Metso.">
     <link rel="icon" href="../img/favicon.ico">
     <title>Hypertieto – Referenssit</title>
+
+    <!-- Päätyylitiedosto -->
     <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
+    <!-- ==========================================================
+         Sivun yläosa – logo, navigaatio ja kielivalinnat
+    =========================================================== -->
     <header class="site-header" role="banner">
         <div class="container header-inner">
+
+            <!-- Logo, vie indeksisivulle -->
             <a href="/index.html" class="logo" aria-label="Hypertieto">
                 <img src="/img/logo.png" alt="Hypertieto logo" width="160" height="40">
-            </a>   
+            </a>
+
+            <!-- Päävalikko (desktop) -->
             <nav class="main-nav" role="navigation" aria-label="Päävalikko">
                 <ul>
                     <li><a href="/index.html">Etusivu</a></li>
                     <li><a href="/fi/palvelut.html">Palvelut</a></li>
                     <li><a href="/fi/minusta.html">Minusta</a></li>
-                    <li><a href="/fi/referenssit.html">Referenssit</a></li>
+                    <li><a href="/fi/referenssit.html" class="active">Referenssit</a></li>
                     <li><a href="/fi/yhteys.html">Yhteys</a></li>
                 </ul>
-            </nav>    
+            </nav>
+
+            <!-- Oikea reuna: kielet + mobiilivalikko -->
             <div class="header-right">
-                <div class="lang-switch" aria-hidden="false">
-                    <button class="lang-btn" id="lang-fi" aria-label="Suomi" title="Suomi">
+
+                <!-- Kielivalinta -->
+                <div class="lang-switch">
+                    <button class="lang-btn" id="lang-fi" aria-label="Suomi">
                         <img src="/img/flag-fi.png" alt="Suomen lippu" width="28" height="20">
                     </button>
-                    <button class="lang-btn" id="lang-en" aria-label="English" title="English">
+                    <button class="lang-btn" id="lang-en" aria-label="English">
                         <img src="/img/flag-en.png" alt="UK/US flag" width="28" height="20">
                     </button>
-                </div>   
+                </div>
+
+                <!-- Hampurilaisvalikko mobiilille -->
                 <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
                     aria-label="Avaa valikko">
                     <span class="hamburger" aria-hidden="true"></span>
                 </button>
             </div>
-        </div> 
+        </div>
+
+        <!-- Mobiilivalikko -->
         <div id="mobile-menu" class="mobile-menu" hidden aria-hidden="true">
             <nav role="navigation" aria-label="Päävalikko mobiili">
                 <ul>
@@ -50,64 +73,109 @@
             </nav>
         </div>
     </header>
+
+    <!-- ==========================================================
+         Pääsisältö alkaa
+    =========================================================== -->
     <main class="container">
+
+        <!-- ----------------------------------------
+             Otsikko ja esittelyteksti
+        ----------------------------------------- -->
         <h1>Referenssit</h1>
         <p class="lead">Tilanne → Toimenpiteet → Tulokset</p>
+
+        <!-- =====================================================
+             Case-osio (kaksi casea + asiakaskommentit)
+        ====================================================== -->
         <section class="cases">
+
+            <!-- ======================
+                 Case 1 – Ranska
+            ======================= -->
             <article class="case">
                 <h2>Asiakasyrityksen ryhmäkuva Ranskassa</h2>
+
+                <!-- Case-kuva -->
                 <figure>
                     <img src="../img/leadership.jpg" alt="Johtoryhmän yhteiskuva Ranskan kokouksesta" width="720"
                         height="360">
                     <figcaption>Johtoryhmän kuva Ranskassa</figcaption>
                 </figure>
+
+                <!-- Tilanne–Toimenpiteet–Tulokset -->
                 <dl>
                     <dt>Tilanne</dt>
                     <dd>Tarve kansainväliselle tuotannon käynnistämiselle Ranskassa.</dd>
+
                     <dt>Toimenpiteet</dt>
                     <dd>Projektinhallinta, sidosryhmäkoordinaatio ja vientimyyntituki.</dd>
+
                     <dt>Tulokset</dt>
                     <dd>Tehdasprojekti eteni aikataulussa ja kaupallinen lanseeraus onnistui.</dd>
                 </dl>
             </article>
+
+            <!-- ======================
+                 Case 2 – Saksa
+            ======================= -->
             <article class="case">
                 <h2>Asiakasyrityksen tilajärjestelyt Saksassa</h2>
+
                 <figure>
                     <img src="../img/meeting_germany.jpg" alt="Kokoustila järjestetty Tuijan toimesta" width="720"
                         height="360">
                     <figcaption>Kokous ja tilajärjestely</figcaption>
                 </figure>
+
                 <dl>
                     <dt>Tilanne</dt>
                     <dd>Suuret kansainväliset tapahtumat ja kokoukset vaativat tarkkaa koordinointia.</dd>
+
                     <dt>Toimenpiteet</dt>
                     <dd>End-to-end tapahtumajärjestelyt, logistiikka ja jälkiseuranta.</dd>
+
                     <dt>Tulokset</dt>
                     <dd>Osallistujapalaute erinomainen ja tapahtuma toteutui budjetissa.</dd>
                 </dl>
             </article>
+
+            <!-- ======================
+                 Asiakkaiden kommentteja
+            ======================= -->
             <aside class="testimonials">
                 <h2>Asiakkaiden kommentteja</h2>
                 <blockquote>”Täydellisesti hoidettu tilaisuus, jokaista yksityiskohtaa myöten”</blockquote>
                 <blockquote>”Ei ole asiaa, jota et pysty ratkaisemaan”</blockquote>
                 <blockquote>”Ilman sinua tätä ei olisi tapahtunut”</blockquote>
             </aside>
+
         </section>
     </main>
+
+    <!-- ==========================================================
+         Sivun alatunniste
+    =========================================================== -->
     <footer class="site-footer" role="contentinfo">
         <div class="container footer-grid">
+
             <div>
                 <h3>Hypertieto</h3>
                 <p>Tuija Christiansen · Virtuaali Johdon Assistentti</p>
+
+                <!-- Sähköposti + puhelin -->
                 <div class="footer-contact">
+
+                    <!-- Sähköposti -->
                     <a href="mailto:tuija.christiansen@hypertieto.fi" class="contact-link">
-                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                            aria-hidden="true">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <path fill="currentColor"
                                 d="M502.3 190.8 327.4 338.2c-22.2 18.9-54.6 18.9-76.8 0L9.7 190.8C3.9 186.1 0 178.7 0 170.7V96c0-26.5 21.5-48 48-48h416c26.5 0 48 21.5 48 48v74.7c0 8-3.9 15.4-9.7 20.1zM0 224v192c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V224L327.4 371.4c-22.2 18.9-54.6 18.9-76.8 0L0 224z" />
                         </svg>
                         <span>tuija.christiansen@hypertieto.fi</span>
-                    </a>  
+                    </a>
+
+                    <!-- Puhelin -->
                     <a href="tel:+358505681187" class="contact-link">
                         <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <path fill="currentColor"
@@ -116,11 +184,12 @@
                         <span>+358 50 5681187</span>
                     </a>
                 </div>
+
+                <!-- LinkedIn-painike -->
                 <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/tuija-christiansen-08aa6456/" class="linkedin-btn" target="_blank"
-                        rel="noopener">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="linkedin-icon"
-                            aria-hidden="true">
+                    <a href="https://www.linkedin.com/in/tuija-christiansen-08aa6456/" class="linkedin-btn"
+                        target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="linkedin-icon">
                             <path fill="currentColor"
                                 d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.3 107 0 82.7 0 53.5A53.5 53.5 0 0 1 53.5 0C82.7 0 107 24.3 107 53.5c0 29.2-24.3 53.5-53.5 53.5zM447.9 448h-92.4V304.1c0-34.3-12.3-57.7-43.1-57.7-23.5 0-37.6 15.8-43.8 31.1-2.2 5.3-2.8 12.7-2.8 20.1V448h-92.4s1.2-270.7 0-299.1h92.4v42.4c12.3-19 34.3-46 83.5-46 61 0 107 39.8 107 125.4V448z" />
                         </svg>
@@ -128,11 +197,18 @@
                     </a>
                 </div>
             </div>
+
+            <!-- Päivitysaikaleima -->
             <div class="footer-meta">
-                <p>Viimeksi päivitetty: <time datetime="2025-12-06">6.12.2025</time></p>
+                <p>Viimeksi päivitetty:
+                    <time datetime="2025-12-06">6.12.2025</time>
+                </p>
             </div>
         </div>
     </footer>
+
+    <!-- Pää-JavaScript (käsittelee mobiilivalikon, kielivalinnan ja aktiivisen linkin korostuksen) -->
     <script src="../js/main.js" defer></script>
+
 </body>
 </html>

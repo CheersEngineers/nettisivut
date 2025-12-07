@@ -1,4 +1,9 @@
 <!doctype html>
+<!-- =====================================================================
+     Palvelut-sivu – Hypertieto
+     Esittelee tarjottavat palvelut palvelukortteina.
+====================================================================== -->
+
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
@@ -7,38 +12,56 @@
         content="Projektikoordinaatio, myynnin tuki, markkinointi, tapahtumat & kokoukset, kalenteri & matkat, monikielinen viestintä.">
     <link rel="icon" href="../img/favicon.ico">
     <title>Hypertieto – Palvelut yrityksille</title>
+
+    <!-- Päätyylitiedosto -->
     <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
+    <!-- ==========================================================
+         Sivun yläosa: logo, navigaatio, kielipainikkeet
+    =========================================================== -->
     <header class="site-header" role="banner">
         <div class="container header-inner">
+
+            <!-- Logo, vie etusivulle -->
             <a href="/index.html" class="logo" aria-label="Hypertieto">
                 <img src="/img/logo.png" alt="Hypertieto logo" width="160" height="40">
             </a>
+
+            <!-- Desktop-valikko -->
             <nav class="main-nav" role="navigation" aria-label="Päävalikko">
                 <ul>
                     <li><a href="/index.html">Etusivu</a></li>
-                    <li><a href="/fi/palvelut.html">Palvelut</a></li>
+                    <li><a href="/fi/palvelut.html" class="active">Palvelut</a></li>
                     <li><a href="/fi/minusta.html">Minusta</a></li>
                     <li><a href="/fi/referenssit.html">Referenssit</a></li>
                     <li><a href="/fi/yhteys.html">Yhteys</a></li>
                 </ul>
-            </nav>   
+            </nav>
+
+            <!-- Oikea reuna: kielet + mobiilivalikko -->
             <div class="header-right">
-                <div class="lang-switch" aria-hidden="false">
-                    <button class="lang-btn" id="lang-fi" aria-label="Suomi" title="Suomi">
+
+                <!-- Kielenvaihto -->
+                <div class="lang-switch">
+                    <button class="lang-btn" id="lang-fi" aria-label="Suomi">
                         <img src="/img/flag-fi.png" alt="Suomen lippu" width="28" height="20">
                     </button>
-                    <button class="lang-btn" id="lang-en" aria-label="English" title="English">
+                    <button class="lang-btn" id="lang-en" aria-label="English">
                         <img src="/img/flag-en.png" alt="UK/US flag" width="28" height="20">
                     </button>
-                </div>  
+                </div>
+
+                <!-- Mobiilin hampurilaisvalikko -->
                 <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
                     aria-label="Avaa valikko">
                     <span class="hamburger" aria-hidden="true"></span>
                 </button>
             </div>
-        </div>    
+        </div>
+
+        <!-- Mobiilivalikko (piilotetaan desktopissa) -->
         <div id="mobile-menu" class="mobile-menu" hidden aria-hidden="true">
             <nav role="navigation" aria-label="Päävalikko mobiili">
                 <ul>
@@ -51,11 +74,29 @@
             </nav>
         </div>
     </header>
+
+    <!-- ==========================================================
+         Pääsisältö alkaa
+    =========================================================== -->
     <main class="container">
+
+        <!-- ------------------------------------
+             Otsikko + esittelyteksti
+        ------------------------------------- -->
         <article class="services">
             <h1>Palvelut</h1>
-            <p class="lead">Tarjoan johdon assistenttipalvelut projektina. Nopea käynnistys, varmuus ja laatu.</p>
+            <p class="lead">
+                Tarjoan johdon assistenttipalvelut projektina. Nopea käynnistys, varmuus ja laatu.
+            </p>
+
+            <!-- ==================================================
+                 Palvelukortit gridissä
+            ==================================================== -->
             <section class="service-grid" aria-label="Palvelukortit">
+
+                <!-- ===========================
+                    Kortti 1: Projektikoordinaatio
+                ============================ -->
                 <article class="service-card">
                     <div class="service-card-media">
                         <img src="/img/project_coordination.png" alt="Projektikoordinaatio" loading="lazy">
@@ -65,6 +106,10 @@
                         <p>Suunnittelu, aikataulutus, raportointi ja sidosryhmien koordinointi.</p>
                     </div>
                 </article>
+
+                <!-- ===========================
+                    Kortti 2: Myynnin tuki
+                ============================ -->
                 <article class="service-card">
                     <div class="service-card-media">
                         <img src="/img/sales_support.png" alt="Myynnin tuki" loading="lazy">
@@ -74,6 +119,10 @@
                         <p>Liidien hallinta, kampanjat, myyntimateriaalit ja asiakassuhteet.</p>
                     </div>
                 </article>
+
+                <!-- ===========================
+                    Kortti 3: Markkinointi
+                ============================ -->
                 <article class="service-card">
                     <div class="service-card-media">
                         <img src="/img/marketing.png" alt="Markkinointi" loading="lazy">
@@ -83,6 +132,10 @@
                         <p>Sisällöntuotanto, esitykset, julkaisut ja julkaisusuunnitelmat.</p>
                     </div>
                 </article>
+
+                <!-- ===========================
+                    Kortti 4: Tapahtumat ja kokoukset
+                ============================ -->
                 <article class="service-card">
                     <div class="service-card-media">
                         <img src="/img/events_and_meetings.png" alt="Tapahtumat ja kokoukset" loading="lazy">
@@ -92,6 +145,10 @@
                         <p>Agenda, logistiikka, osallistujahallinta ja jälkiseuranta.</p>
                     </div>
                 </article>
+
+                <!-- ===========================
+                    Kortti 5: Kalenteri & matkat
+                ============================ -->
                 <article class="service-card">
                     <div class="service-card-media">
                         <img src="/img/calendar_and_travel.png" alt="Kalenteri ja matkat" loading="lazy">
@@ -101,6 +158,10 @@
                         <p>Priorisointi, varaukset, muutosten hallinta ja matkareitit.</p>
                     </div>
                 </article>
+
+                <!-- ===========================
+                    Kortti 6: Monikielinen viestintä
+                ============================ -->
                 <article class="service-card">
                     <div class="service-card-media">
                         <img src="/img/multilingual_communication.png" alt="Monikielinen viestintä" loading="lazy">
@@ -110,27 +171,43 @@
                         <p>Käännökset ja kirjoittaminen suomeksi · ruotsiksi · norjaksi · saksaksi · englanniksi.</p>
                     </div>
                 </article>
+
             </section>
+
+            <!-- ------------------------------------
+                Kaksi toimintakehotusta (CTA)
+            ------------------------------------- -->
             <div class="cta-strip">
                 <a class="btn btn-primary" href="yhteys.html#book">Varaa 20 min keskustelu</a>
                 <a class="btn btn-outline" href="yhteys.html#quote">Pyydä tarjous</a>
             </div>
+
         </article>
     </main>
+
+    <!-- ==========================================================
+        Sivun alatunniste
+    =========================================================== -->
     <footer class="site-footer" role="contentinfo">
         <div class="container footer-grid">
+
             <div>
                 <h3>Hypertieto</h3>
                 <p>Tuija Christiansen · Virtuaali Johdon Assistentti</p>
+
+                <!-- Sähköposti + puhelin -->
                 <div class="footer-contact">
+
+                    <!-- Sähköposti -->
                     <a href="mailto:tuija.christiansen@hypertieto.fi" class="contact-link">
-                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                            aria-hidden="true">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <path fill="currentColor"
                                 d="M502.3 190.8 327.4 338.2c-22.2 18.9-54.6 18.9-76.8 0L9.7 190.8C3.9 186.1 0 178.7 0 170.7V96c0-26.5 21.5-48 48-48h416c26.5 0 48 21.5 48 48v74.7c0 8-3.9 15.4-9.7 20.1zM0 224v192c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V224L327.4 371.4c-22.2 18.9-54.6 18.9-76.8 0L0 224z" />
                         </svg>
                         <span>tuija.christiansen@hypertieto.fi</span>
-                    </a>  
+                    </a>
+
+                    <!-- Puhelin -->
                     <a href="tel:+358505681187" class="contact-link">
                         <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <path fill="currentColor"
@@ -139,11 +216,12 @@
                         <span>+358 50 5681187</span>
                     </a>
                 </div>
+
+                <!-- LinkedIn -->
                 <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/tuija-christiansen-08aa6456/" class="linkedin-btn" target="_blank"
-                        rel="noopener">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="linkedin-icon"
-                            aria-hidden="true">
+                    <a href="https://www.linkedin.com/in/tuija-christiansen-08aa6456/" class="linkedin-btn"
+                        target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="linkedin-icon">
                             <path fill="currentColor"
                                 d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.3 107 0 82.7 0 53.5A53.5 53.5 0 0 1 53.5 0C82.7 0 107 24.3 107 53.5c0 29.2-24.3 53.5-53.5 53.5zM447.9 448h-92.4V304.1c0-34.3-12.3-57.7-43.1-57.7-23.5 0-37.6 15.8-43.8 31.1-2.2 5.3-2.8 12.7-2.8 20.1V448h-92.4s1.2-270.7 0-299.1h92.4v42.4c12.3-19 34.3-46 83.5-46 61 0 107 39.8 107 125.4V448z" />
                         </svg>
@@ -151,11 +229,17 @@
                     </a>
                 </div>
             </div>
+
             <div class="footer-meta">
-                <p>Viimeksi päivitetty: <time datetime="2025-12-06">6.12.2025</time></p>
+                <p>Viimeksi päivitetty:
+                    <time datetime="2025-12-06">6.12.2025</time>
+                </p>
             </div>
         </div>
     </footer>
+
+    <!-- Sivuston pääasiallinen JavaScript -->
     <script src="../js/main.js" defer></script>
+
 </body>
 </html>
