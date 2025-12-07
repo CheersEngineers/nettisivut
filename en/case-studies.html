@@ -24,7 +24,7 @@
     <!-- ==============================================================
        HEADER: logo, päävalikko, kielipainikkeet ja mobiilivalikko
     ============================================================== -->
-    <header class="site-header" role="banner">
+    <header class="site-header">
         <div class="container header-inner">
             <!-- Logo: linkki englanninkieliseen etusivuun -->
             <a href="/en/index.html" class="logo" aria-label="Hypertieto">
@@ -32,7 +32,7 @@
             </a>
 
             <!-- Päänavigaatio (desktop) -->
-            <nav class="main-nav" role="navigation" aria-label="Main menu">
+            <nav class="main-nav" aria-label="Main menu">
                 <ul>
                     <li><a href="/en/index.html">Home</a></li>
                     <li><a href="/en/services.html">Services</a></li>
@@ -62,8 +62,8 @@
         </div>
 
         <!-- Mobiilivalikko (piilotettu oletuksena; JS näyttää/piilottaa) -->
-        <div id="mobile-menu" class="mobile-menu" hidden aria-hidden="true">
-            <nav role="navigation" aria-label="Mobile main menu">
+        <div id="mobile-menu" class="mobile-menu" hidden ="true">
+            <nav aria-label="Mobile main menu">
                 <ul>
                     <li><a href="/en/index.html">Home</a></li>
                     <li><a href="/en/services.html">Services</a></li>
@@ -78,11 +78,13 @@
     <!-- =================================================================
        PÄÄSISÄLTÖ
     ================================================================== -->
-    <main id="main" class="container" role="main">
+    <main id="main" class="container">
         <h1>Case Studies</h1>
         <p class="lead">Situation → Actions → Results</p>
 
         <section class="cases">
+            <h2>Selected case studies</h2>
+
             <!-- Case 1 -->
             <article class="case">
                 <h2>Group photo of a client company in France</h2>
@@ -140,7 +142,7 @@
     <!-- ==============================================================
        FOOTER: yritystiedot, yhteystiedot ja sosiaalinen media
     ============================================================== -->
-    <footer class="site-footer" role="contentinfo">
+    <footer class="site-footer">
         <div class="container footer-grid">
             <div>
                 <h3>Hypertieto</h3>
