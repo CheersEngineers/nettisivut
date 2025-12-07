@@ -82,4 +82,47 @@ document.addEventListener('DOMContentLoaded', function () {
         if (btnFi) btnFi.classList.toggle("active-lang", !isEn);
     }
     highlightActive();
+
+    // Highlight current page in navigation
+    function highlightCurrentPage() {
+        const navLinks = document.querySelectorAll('.main-nav a, .mobile-menu a');
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && normalizePath(href) === currentPath) {
+                link.setAttribute('data-current', 'true');
+            } else {
+                link.removeAttribute('data-current');
+            }
+        });
+    }
+    highlightCurrentPage();
+
+    // Simple form validation with error messages
+    const contactForm = document.querySelector('.contact-form form');
+    if (contactForm) {
+        const inputs = contactForm.querySelectorAll('input[required], textarea[required], select[required]');
+        
+        contactForm.addEventListener('submit', function(e) {
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add('invalid');
+                } else {
+                    input.classList.remove('invalid');
+                }
+            });
+            if (!isValid) {
+                e.preventDefault();
+                alert('Please fill in all required fields.');
+            }
+        });
+
+        // Remove error class on input
+        inputs.forEach(input => {
+            input.addEventListener('input', function() {
+                this.classList.remove('invalid');
+            });
+        });
+    }
 });
