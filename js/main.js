@@ -235,4 +235,22 @@ document.addEventListener('DOMContentLoaded', () => {
             focusTrapHandler = null;
         }
     }
+
+/* =============================================================================================
+       VIIMEKSI PÄIVITETTY -PÄIVÄMÄÄRÄ (FOOTER)
+       - Hakee tiedoston viimeisimmän muokkauspäivämäärän ja näyttää sen footerissa
+       ============================================================================================= */
+const updatedElem = document.getElementById('paivitetty');
+if (updatedElem) {
+    const lastModified = new Date(document.lastModified);
+    if (!isNaN(lastModified.getTime())) {
+        const formattedDate = lastModified.toLocaleDateString('fi-FI', {
+            day: 'numeric',
+            month: 'numeric',
+            year: 'numeric'
+        });
+        updatedElem.textContent = formattedDate;
+        updatedElem.setAttribute('datetime', lastModified.toISOString().split('T')[0]);
+        }
+    }
 });
