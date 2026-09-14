@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="../css/styles.css">
 
     <!-- Kieliversiot / SEO -->
-    <link rel="alternate" href="../fi/yhteys.html" hreflang="fi">
 </head>
 <body>
     <!-- ==============================================================
@@ -42,6 +41,7 @@
                     <li><a href="/en/services.html">Services</a></li>
                     <li><a href="/en/about.html">About</a></li>
                     <li><a href="/en/case-studies.html">Case Studies</a></li>
+                    <li><a href="/en/gallery.html">Gallery</a></li>
                     <li><a href="/en/contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -49,15 +49,6 @@
             <!-- Oikean reuna: kielivalinta ja mobiilivalikon painike -->
             <div class="header-right">
                 <!-- Kielivalinnat -->
-                <div class="lang-switch" aria-hidden="false">
-                    <button class="lang-btn" id="lang-fi" aria-label="Suomi" title="Suomi">
-                        <img src="/img/flag-fi.png" alt="Suomen lippu" width="28" height="20">
-                    </button>
-                    <button class="lang-btn" id="lang-en" aria-label="English" title="English">
-                        <img src="/img/flag-en.png" alt="UK/US flag" width="28" height="20">
-                    </button>
-                </div>
-
                 <!-- Hampurilaispainike mobiilivalikolle -->
                 <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
                     aria-label="Open menu">
@@ -74,6 +65,7 @@
                     <li><a href="/en/services.html">Services</a></li>
                     <li><a href="/en/about.html">About</a></li>
                     <li><a href="/en/case-studies.html">Case Studies</a></li>
+                    <li><a href="/en/gallery.html">Gallery</a></li>
                     <li><a href="/en/contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -88,8 +80,8 @@
     <main class="container contact-page">
         <!-- Yhteystiedot -->
         <h1>Contact</h1>
-        <p class="lead">Contact by email or phone, or send a short project brief using the form below.</p>
-        <section class="contact-info">
+        <p class="lead">Get in touch by email or phone to discuss your project.</p>
+        <section class="contact-info" id="book">
             <h2>Contact information</h2>
             <div class="footer-contact">
                 <a href="mailto:tuija.christiansen@hypertieto.fi" class="contact-link">
@@ -114,47 +106,6 @@
                     </svg>
                     <span>Let's connect!</span>
                 </a>
-        </section>
-
-        <!-- Yhteydenottolomake -->
-        <section id="contact-form" class="contact-form">
-            <h2>Send a message</h2>
-            <form action="#" method="post" novalidate>
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" required minlength="2">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" required>
-                <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="tel" placeholder="+358 50 5681187">
-                <label for="budget">Estimated budget</label>
-                <input id="budget" name="budget" type="number" min="0" max="1000000">
-                <label for="service">Service</label>
-                <select id="service" name="service" required>
-                    <option value="" disabled selected>Select a service</option>
-                    <option value="project">Project Coordination</option>
-                    <option value="sales">Sales Support</option>
-                    <option value="marketing">Marketing</option>
-                    <option value="events">Events & Meetings</option>
-                    <option value="travel">Calendar & Travel</option>
-                </select>
-                <fieldset>
-                    <legend>Preferred language</legend>
-                    <label><input type="checkbox" name="lang" value="fi"> Finnish</label>
-                    <label><input type="checkbox" name="lang" value="sv"> Swedish</label>
-                    <label><input type="checkbox" name="lang" value="no"> Norwegian</label>
-                    <label><input type="checkbox" name="lang" value="de"> German</label>
-                    <label><input type="checkbox" name="lang" value="en"> English</label>
-                </fieldset>
-                <label for="start">Desired start date</label>
-                <input id="start" name="start" type="date">
-                <label for="message">Short project description</label>
-                <textarea id="message" name="message" rows="6" required minlength="10"></textarea>
-                <label class="consent">
-                    <input type="checkbox" id="consent" name="consent" required>
-                    I consent to my data being used for contact purposes.
-                </label>
-                <button class="btn btn-primary" type="submit">Send message</button>
-            </form>
         </section>
 
         <!-- Kuvagalleria -->

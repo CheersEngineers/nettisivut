@@ -6,6 +6,9 @@
 
 <html lang="fi">
 <head>
+    <meta http-equiv="refresh" content="0; url=/en/contact.html">
+    <meta name="robots" content="noindex">
+    <script>window.location.replace('/en/contact.html');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ota yhteyttä: Varaa 20 min keskustelu tai pyydä tarjous.">
@@ -126,62 +129,6 @@
                 </svg>
                 <span>Let's connect!</span>
             </a>
-        </section>
-
-        <!-- ==================================
-             Yhteydenottolomake
-        ================================== -->
-        <section id="contact-form" class="contact-form">
-            <h2>Lähetä viesti</h2>
-
-            <!-- Lomake ei vielä täydessä toiminnassa backend puutteen vuoksi. Siitä syystä action = "#" -->
-            <form action="#" method="post" novalidate>
-
-                <label for="name">Nimi</label>
-                <input id="name" name="name" type="text" required minlength="2">
-
-                <label for="email">Sähköposti</label>
-                <input id="email" name="email" type="email" required>
-
-                <label for="phone">Puhelin</label>
-                <input id="phone" name="phone" type="tel" placeholder="+358 50 5681187">
-
-                <label for="budget">Arvioitu budjetti</label>
-                <input id="budget" name="budget" type="number" min="0" max="1000000">
-
-                <label for="service">Palvelu</label>
-                <select id="service" name="service" required>
-                    <option value="" disabled selected>Valitse palvelu</option>
-                    <option value="project">Projektikoordinaatio</option>
-                    <option value="sales">Myynnin tuki</option>
-                    <option value="marketing">Markkinointi</option>
-                    <option value="events">Tapahtumat & kokoukset</option>
-                    <option value="travel">Kalenteri & matkat</option>
-                </select>
-
-                <fieldset>
-                    <legend>Toivottu kieli</legend>
-                    <label><input type="checkbox" name="lang" value="fi"> Suomi</label>
-                    <label><input type="checkbox" name="lang" value="sv"> Ruotsi</label>
-                    <label><input type="checkbox" name="lang" value="no"> Norja</label>
-                    <label><input type="checkbox" name="lang" value="de"> Saksa</label>
-                    <label><input type="checkbox" name="lang" value="en"> Englanti</label>
-                </fieldset>
-
-                <label for="start">Toivottu aloituspäivä</label>
-                <input id="start" name="start" type="date">
-
-                <label for="message">Projektin lyhyt kuvaus</label>
-                <textarea id="message" name="message" rows="6" required minlength="10"></textarea>
-
-                <!-- Tietosuoja-suostumus -->
-                <label class="consent">
-                    <input type="checkbox" id="consent" name="consent" required>
-                    Hyväksyn tietojen käsittelyn yhteydenottoa varten.
-                </label>
-
-                <button class="btn btn-primary" type="submit">Lähetä viesti</button>
-            </form>
         </section>
 
         <!-- ==================================

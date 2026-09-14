@@ -1,6 +1,5 @@
 /* ===========================================================================================
-   Tämä tiedosto käsittelee sivuston interaktiot: mobiilivalikon, kielivalinnan,
-   aktiivisen sivun korostuksen ja yksinkertaisen lomakevalidoinnin.
+   This file handles the mobile menu, current-page navigation state and footer date.
    =========================================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -61,24 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => closeMenu()));
     }
 
-    /* ===============================
-       KIELIVALINNAT: kartta ja navigointi
-       =============================== */
-    const langMap = {
-        '/index.html': '/en/index.html',
-        '/fi/palvelut.html': '/en/services.html',
-        '/fi/minusta.html': '/en/about.html',
-        '/fi/referenssit.html': '/en/case-studies.html',
-        '/fi/yhteys.html': '/en/contact.html',
-        '/fi/faq.html': '/en/faq.html',
-        '/en/index.html': '/index.html',
-        '/en/services.html': '/fi/palvelut.html',
-        '/en/about.html': '/fi/minusta.html',
-        '/en/case-studies.html': '/fi/referenssit.html',
-        '/en/contact.html': '/fi/yhteys.html',
-        '/en/faq.html': '/fi/faq.html'
-    };
-
     const normalizePath = (path) => {
         if (!path || path === '/') return '/index.html';
         const p = path.split('?')[0].split('#')[0];
@@ -87,33 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const currentPath = normalizePath(window.location.pathname);
-    const btnFi = document.getElementById('lang-fi');
-    const btnEn = document.getElementById('lang-en');
-
-    if (btnFi) {
-        btnFi.addEventListener('click', () => {
-            const target = langMap[currentPath] || '/index.html';
-            window.location.href = target;
-        });
-    }
-
-    if (btnEn) {
-        btnEn.addEventListener('click', () => {
-            const target = langMap[currentPath] || '/en/index.html';
-            window.location.href = target;
-        });
-    }
-
-    /* =============================================================================================
-       AKTIIVISEN LINKIN KOROSTUS
-       - Yrittää täsmäosumaa, ja tarvittaessa tiedostonimen perusteella kielitietoinen fallback
-       ============================================================================================= */
-    const highlightActive = () => {
-        const isEn = currentPath.startsWith('/en/');
-        if (btnEn) btnEn.classList.toggle('active-lang', isEn);
-        if (btnFi) btnFi.classList.toggle('active-lang', !isEn);
-    };
-    highlightActive();
 
     const highlightCurrentPage = () => {
         const navLinks = document.querySelectorAll('.main-nav a, .mobile-menu a');
@@ -147,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Kielitietoinen tiedostonimen fallback
+            // Filename fallback for equivalent same-folder pages.
             const linkTop = topSegment(linkPath);
             const linkFile = linkPath.split('/').pop();
 
@@ -164,35 +118,85 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     highlightCurrentPage();
 
-    /* =============================================================================================
-       YKSINKERTAINEN LOMAKEVALIDOINTI
-       - Tarkistaa vaaditut kentät ja näyttää yksinkertaisen ilmoituksen
-       ============================================================================================= */
-    const contactForm = document.querySelector('.contact-form form');
-    if (contactForm) {
-        const inputs = contactForm.querySelectorAll('input[required], textarea[required], select[required]');
+    /* ======================================
+       GALLERY LIGHTBOX: full-size images
+       ====================================== */
+    const galleryItems = Array.from(document.querySelectorAll('.gallery-page .gallery-item'));
+    const lightbox = document.getElementById('gallery-lightbox');
 
-        contactForm.addEventListener('submit', (e) => {
-            let isValid = true;
-            inputs.forEach((input) => {
-                if (!input.value.trim()) {
-                    isValid = false;
-                    input.classList.add('invalid');
-                } else {
-                    input.classList.remove('invalid');
-                }
-            });
+    if (galleryItems.length && lightbox) {
+        const lightboxImage = lightbox.querySelector('.lightbox__image');
+        const lightboxCaption = lightbox.querySelector('.lightbox__caption');
+        const closeLightboxButton = lightbox.querySelector('.lightbox__close');
+        const previousButton = lightbox.querySelector('.lightbox__control--previous');
+        const nextButton = lightbox.querySelector('.lightbox__control--next');
+        let activeGalleryIndex = 0;
+        let lightboxFocusReturn = null;
 
-            if (!isValid) {
-                e.preventDefault();
-                alert('Please fill in all required fields.');
+        const showImage = (index) => {
+            activeGalleryIndex = (index + galleryItems.length) % galleryItems.length;
+            const item = galleryItems[activeGalleryIndex];
+            const image = item.querySelector('img');
+            const caption = item.closest('figure').querySelector('figcaption');
+
+            lightboxImage.src = image.currentSrc || image.src;
+            lightboxImage.alt = image.alt;
+            lightboxCaption.textContent = caption ? caption.textContent : image.alt;
+        };
+
+        const openLightbox = (index) => {
+            lightboxFocusReturn = document.activeElement;
+            showImage(index);
+            lightbox.removeAttribute('hidden');
+            document.body.classList.add('is-lightbox-open');
+            closeLightboxButton.focus();
+        };
+
+        const closeLightbox = () => {
+            lightbox.setAttribute('hidden', '');
+            document.body.classList.remove('is-lightbox-open');
+            if (lightboxFocusReturn instanceof HTMLElement) {
+                lightboxFocusReturn.focus();
             }
+        };
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => openLightbox(index));
         });
 
-        inputs.forEach((input) => {
-            input.addEventListener('input', function () {
-                this.classList.remove('invalid');
-            });
+        closeLightboxButton.addEventListener('click', closeLightbox);
+        previousButton.addEventListener('click', () => showImage(activeGalleryIndex - 1));
+        nextButton.addEventListener('click', () => showImage(activeGalleryIndex + 1));
+
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (lightbox.hasAttribute('hidden')) return;
+
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                closeLightbox();
+            } else if (event.key === 'ArrowLeft') {
+                event.preventDefault();
+                showImage(activeGalleryIndex - 1);
+            } else if (event.key === 'ArrowRight') {
+                event.preventDefault();
+                showImage(activeGalleryIndex + 1);
+            } else if (event.key === 'Tab') {
+                const focusable = [closeLightboxButton, previousButton, nextButton];
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+
+                if (event.shiftKey && document.activeElement === first) {
+                    event.preventDefault();
+                    last.focus();
+                } else if (!event.shiftKey && document.activeElement === last) {
+                    event.preventDefault();
+                    first.focus();
+                }
+            }
         });
     }
 
@@ -244,7 +248,7 @@ const updatedElem = document.getElementById('paivitetty');
 if (updatedElem) {
     const lastModified = new Date(document.lastModified);
     if (!isNaN(lastModified.getTime())) {
-        const formattedDate = lastModified.toLocaleDateString('fi-FI', {
+        const formattedDate = lastModified.toLocaleDateString('en-GB', {
             day: 'numeric',
             month: 'numeric',
             year: 'numeric'
