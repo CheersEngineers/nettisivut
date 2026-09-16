@@ -434,6 +434,10 @@ body{
   .service-grid{ grid-template-columns: repeat(2, 1fr); }
 }
 
+.hero-figure-mobile {
+  display: none;
+}
+
 /* Mobiili */
 @media (max-width: 700px){
   .header-inner{position: relative; justify-content: space-between;}
@@ -444,7 +448,9 @@ body{
   .header-right {margin-left: auto;display: flex; align-items: center; gap: 0.5rem;}
   .hero-grid{grid-template-columns: 1fr;}
   .service-grid{grid-template-columns: 1fr;}
-  .hero-figure{order: -1;} /* kuva näkyy ensin mobiilissa, teksti jälkeen */
+  .additional-photos {grid-template-columns: 1fr;}
+  .hero-figure-mobile {display: block; margin: 1.5rem 0;}
+  .hero-figure-desktop {display: none;}
 }
 
 /* =========================
@@ -594,7 +600,6 @@ body.is-lightbox-open{ overflow: hidden; }
   gap: 1rem;
   margin-top: 1rem;
 }
-@media (max-width: 700px){ .additional-photos{ grid-template-columns: 1fr; } }
 
 /* =========================
    Lomakkeet ja validointi

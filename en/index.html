@@ -8,15 +8,21 @@
 ============================================================================================-->
 
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tuija Christiansen | Executive Support &amp; Project Services. Project-based executive support, coordination and event management for international business operations.">
+
+    <meta name="description"
+        content="Tuija Christiansen | Executive Support &amp; Project Services. Project-based executive support, coordination and event management for international business operations.">
+
     <link rel="icon" href="../img/favicon.ico">
+
     <title>Tuija Christiansen | Executive Support &amp; Project Services</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
 
@@ -28,151 +34,281 @@
 </head>
 
 <body>
+
     <!-- ==============================================================
-        HEADER: logo, päävalikko, kielivalinta ja mobiilivalikko
+        HEADER: logo, päävalikko ja mobiilivalikko
     =============================================================== -->
     <header class="site-header">
+
         <div class="container header-inner">
-            <!-- Logo: linkki englanninkieliseen etusivuun -->
+
+            <!-- Logo -->
             <a href="/en/index.html" class="logo" aria-label="Hypertieto">
                 <img src="/img/logo.png" alt="Hypertieto logo" width="160" height="40">
             </a>
 
-            <!-- Päävalikko (näkyy suuremmilla näytöillä) -->
+            <!-- Päävalikko desktop -->
             <nav class="main-nav" aria-label="Main menu">
                 <ul>
                     <li><a href="/en/index.html">Home</a></li>
                     <li><a href="/en/services.html">Services</a></li>
                     <li><a href="/en/about.html">About</a></li>
-                    <li><a href="/en/case-studies.html">References & Experience</a></li>
+                    <li><a href="/en/case-studies.html">References &amp; Experience</a></li>
                     <li><a href="/en/gallery.html">Gallery</a></li>
                     <li><a href="/en/contact.html">Contact</a></li>
                 </ul>
             </nav>
 
-            <!-- Oikean reuna: kielivalinta ja mobiilivalikon painike -->
+            <!-- Mobiilivalikon painike -->
             <div class="header-right">
-                <!-- Hampurilaispainike mobiilivalikolle -->
+
                 <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
                     aria-label="Open menu">
+
                     <span class="hamburger" aria-hidden="true"></span>
+
                 </button>
+
             </div>
+
         </div>
 
-        <!-- Mobiilivalikko (piilotettu oletuksena; JS näyttää/piilottaa) -->
+        <!-- Mobiilivalikko -->
         <div id="mobile-menu" class="mobile-menu" hidden>
+
             <nav aria-label="Mobile main menu">
+
                 <ul>
                     <li><a href="/en/index.html">Home</a></li>
                     <li><a href="/en/services.html">Services</a></li>
                     <li><a href="/en/about.html">About</a></li>
-                    <li><a href="/en/case-studies.html">References & Experience</a></li>
+                    <li><a href="/en/case-studies.html">References &amp; Experience</a></li>
                     <li><a href="/en/gallery.html">Gallery</a></li>
                     <li><a href="/en/contact.html">Contact</a></li>
                 </ul>
+
             </nav>
+
         </div>
+
     </header>
+
 
     <!-- =================================================================
         PÄÄSISÄLTÖ
-        Käyttäjälle ohjeet: Täällä saa tehdä muutoksia etusivun sisältöön!
     ================================================================== -->
     <main id="main" class="site-main">
+
         <!-- HERO-OSIO -->
         <section class="hero">
+
             <div class="container hero-grid">
-                <!-- Tekstisisältö -->
+
+                <!-- ======================================================
+                    HERO-TEXT
+                ======================================================= -->
                 <div class="hero-content">
-                    <h1 class="hero-title">Hypertieto – Trusted Insight for Visionary Leadership</h1>
-                    </br>
-                    <h2>Project-Based Executive Support. Delivering Structure, Connections and Results.</h2>
+
+                    <!-- Pääotsikko -->
+                    <h1 class="hero-title">
+                        Hypertieto – Trusted Insight for Visionary Leadership
+                    </h1>
+
+
+                    <!-- ==================================================
+                        MOBIILIKUVA
+
+                        Näkyy vain mobiilissa.
+                        Sijaitsee heti H1-otsikon jälkeen.
+                    =================================================== -->
+                    <figure class="hero-figure hero-figure-mobile">
+
+                        <img src="../img/tuija_2.jpg" alt="Tuija Christiansen profile" width="420" height="560">
+
+                        <figcaption>
+                            Tuija Christiansen | Executive Support &amp; Project Services
+                        </figcaption>
+
+                    </figure>
+
+
+                    <!-- Alaotsikko -->
+                    <h2>
+                        Project-Based Executive Support. Delivering Structure, Connections and Results.
+                    </h2>
+
+
+                    <!-- Esittelyteksti -->
                     <p class="lead">
                         After more than four decades supporting senior executives, leadership teams and global
                         international business operations, I help organizations bring structure, coordination,
                         connections and momentum to their most important projects.
                     </p>
 
-                        <!-- CTA-painike
-                        <div class="hero-ctas">
-                            <a class="btn btn-primary" href="contact.html#book">Book a 20 min call</a>
-                        </div>
-                        -->
 
-                    <!-- Vahvuuslista -->
+                    <!-- ==================================================
+                        CTA-painike
+                        Poistettu käytöstä tällä hetkellä.
+                    =================================================== -->
+                    <!--
+                    <div class="hero-ctas">
+                        <a class="btn btn-primary" href="contact.html#book">
+                            Book a 20 min call
+                        </a>
+                    </div>
+                    -->
+
+
+                    <!-- ==================================================
+                        VAHVUUSLISTA
+                    =================================================== -->
                     <ul class="highlights">
-                        <li><strong>Exceptional organizational skills</strong></li>
-                        <li><strong>Extensive international network</strong></li>
-                        <li><strong>Hands-on sales and marketing execution</strong></li>
-                        <li><strong>End-to-end event and meeting management</strong></li>
+
+                        <li>
+                            <strong>Exceptional organizational skills</strong>
+                        </li>
+
+                        <li>
+                            <strong>Extensive international network</strong>
+                        </li>
+
+                        <li>
+                            <strong>Hands-on sales and marketing execution</strong>
+                        </li>
+
+                        <li>
+                            <strong>End-to-end event and meeting management</strong>
+                        </li>
+
                     </ul>
+
                 </div>
 
-                <!-- Profiilikuva -->
-                <figure class="hero-figure">
+
+                <!-- ======================================================
+                    DESKTOP-KUVA
+
+                    Näkyy desktopissa oikealla.
+                    Piilotetaan mobiilissa CSS:llä.
+                ======================================================= -->
+                <figure class="hero-figure hero-figure-desktop">
+
                     <img src="../img/tuija_2.jpg" alt="Tuija Christiansen profile" width="420" height="560">
-                    <figcaption>Tuija Christiansen | Executive Support &amp; Project Services</figcaption>
+
+                    <figcaption>
+                        Tuija Christiansen | Executive Support &amp; Project Services
+                    </figcaption>
+
                 </figure>
+
             </div>
+
         </section>
 
     </main>
 
+
     <!-- ==============================================================
-       ALATUNNISTE / FOOTER
+       FOOTER
     =============================================================== -->
     <footer class="site-footer">
+
         <div class="container footer-grid">
+
             <div>
+
                 <h3>Hypertieto</h3>
-                <p>Tuija Christiansen | Executive Support Consultant | Project Coordination, Events & Executive
-                Services Across Europe</p>
+
+                <p>
+                    Tuija Christiansen | Executive Support Consultant | Project Coordination, Events &amp; Executive
+                    Services Across Europe
+                </p>
+
 
                 <!-- Yhteystiedot -->
                 <div class="footer-contact">
+
+                    <!-- Email -->
                     <a href="mailto:tuija.christiansen@hypertieto.fi" class="contact-link">
+
                         <svg class="contact-icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 512 512"
                             aria-hidden="true">
+
                             <path fill="currentColor"
                                 d="M502.3 190.8 327.4 338.2c-22.2 18.9-54.6 18.9-76.8 0L9.7 190.8C3.9 186.1 0 178.7 0 170.7V96c0-26.5 21.5-48 48-48h416c26.5 0 48 21.5 48 48v74.7c0 8-3.9 15.4-9.7 20.1zM0 224v192c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V224L327.4 371.4c-22.2 18.9-54.6 18.9-76.8 0L0 224z" />
+
                         </svg>
-                        <span>tuija.christiansen@hypertieto.fi</span>
+
+                        <span>
+                            tuija.christiansen@hypertieto.fi
+                        </span>
+
                     </a>
 
+
+                    <!-- Puhelin -->
                     <a href="tel:+358505681187" class="contact-link">
+
                         <svg class="contact-icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 512 512"
                             aria-hidden="true">
+
                             <path fill="currentColor"
                                 d="M511.7 387.3c-2.2 49.6-42.2 89.6-91.8 91.8-52.8 2.4-105.6-14.2-152.8-47.2-47.2-33-85.6-77.6-114.4-129.6-28.8-52-44.8-108.8-47.2-161.6-2.2-49.6 39.2-91.6 88.8-93.8 23.2-1 46.4 6.4 64.8 21.6l46.4 37.6c18.4 15.2 24.8 40.8 16.8 63.2l-20.8 57.6c-4.8 13.6-16.8 23.2-31.2 25.6l-52.8 8.8c14.4 28.8 34.4 55.2 58.4 77.6 24 22.4 51.2 40.8 80 54.4l8.8-52.8c2.4-14.4 12-26.4 25.6-31.2l57.6-20.8c22.4-8 48-1.6 63.2 16.8l37.6 46.4c15.2 18.4 22.6 41.6 21.6 64.8z" />
+
                         </svg>
-                        <span>+358 50 5681187</span>
+
+                        <span>
+                            +358 50 5681187
+                        </span>
+
                     </a>
+
                 </div>
+
 
                 <!-- LinkedIn -->
                 <div class="footer-social">
+
                     <a href="https://www.linkedin.com/in/tuija-christiansen-08aa6456/" class="linkedin-btn"
                         target="_blank" rel="noopener noreferrer">
+
                         <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512" class="linkedin-icon"
                             aria-hidden="true">
+
                             <path fill="currentColor"
                                 d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.3 107 0 82.7 0 53.5A53.5 53.5 0 0 1 53.5 0C82.7 0 107 24.3 107 53.5c0 29.2-24.3 53.5-53.5 53.5zM447.9 448h-92.4V304.1c0-34.3-12.3-57.7-43.1-57.7-23.5 0-37.6 15.8-43.8 31.1-2.2 5.3-2.8 12.7-2.8 20.1V448h-92.4s1.2-270.7 0-299.1h92.4v42.4c12.3-19 34.3-46 83.5-46 61 0 107 39.8 107 125.4V448z" />
+
                         </svg>
-                        <span>Let's connect!</span>
+
+                        <span>
+                            Let's connect!
+                        </span>
+
                     </a>
+
                 </div>
+
             </div>
+
 
             <!-- Päivitysaikaleima -->
             <div class="footer-meta">
-                <p>Last updated: <time id="paivitetty"></time></p>
+
+                <p>
+                    Last updated:
+                    <time id="paivitetty"></time>
+                </p>
+
             </div>
+
         </div>
+
     </footer>
 
-    <!-- Pää-JavaScript (käsittelee mobiilivalikon, kielivalinnan ja aktiivisen linkin korostuksen) -->
+
+    <!-- Pää-JavaScript -->
     <script src="../js/main.js" defer></script>
+
 </body>
 
 </html>
